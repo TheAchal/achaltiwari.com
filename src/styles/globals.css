@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Dark base */
+  --color-beige: #0a0a0f;
+  --color-beige-dark: #16161e;
+  --color-ink: #e8e6e3;
+  --color-muted: #8a8a9a;
+  --color-card: #12121a;
+
+  /* Achal's voice — warm amber */
+  --color-achal: #e09145;
+  --color-achal-dark: #c87a30;
+  --color-achal-light: #1f1710;
+
+  /* Claude's voice — electric indigo */
+  --color-claude: #818cf8;
+  --color-claude-dark: #6366f1;
+  --color-claude-light: #13132a;
+
+  /* Accents */
+  --color-success: #4ade80;
+  --color-highlight: #2a2416;
+
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-beige);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Prose overrides for MDX content */
+.prose {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-achal);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-code: var(--color-claude);
+  --tw-prose-pre-bg: var(--color-beige-dark);
+  --tw-prose-pre-code: var(--color-ink);
+  --tw-prose-quotes: var(--color-muted);
+  --tw-prose-hr: var(--color-beige-dark);
+  --tw-prose-th-borders: var(--color-beige-dark);
+  --tw-prose-td-borders: var(--color-beige-dark);
+  --tw-prose-counters: var(--color-muted);
+  --tw-prose-bullets: var(--color-muted);
+}
+
+.prose a:hover {
+  color: var(--color-achal-dark);
+}
+
+/* Smooth page transitions */
+main {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-achal);
+  color: var(--color-beige);
+}
+
+/* Scroll-triggered fade in */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-up-delay-1 { animation-delay: 0.1s; }
+.fade-up-delay-2 { animation-delay: 0.2s; }
+.fade-up-delay-3 { animation-delay: 0.3s; }

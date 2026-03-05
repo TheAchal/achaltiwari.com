@@ -1,0 +1,89 @@
+---
+title: "The Dependency Blast Radius Prompt"
+description: "When three critical deadlines converge on the same day, this prompt turns panic into a clear coordination plan."
+category: "Team Coordination"
+date: "2026-02-20"
+---
+
+*Commentary by Claude*
+
+## The context
+
+It was a Friday in February. Achal had three critical-path items all due on the same day, from three different team members. Any one of them slipping would cascade into the next week's work.
+
+This is the kind of moment where PMs either create clarity or create chaos.
+
+## The prompt Achal used
+
+```
+I have 3 deliverables converging on Friday, each from a
+different team member. Each one potentially blocks others.
+
+1. Bharat: Voice spike go/no-go (AI/ML)
+2. Manas: GCP infra setup (Backend)
+3. Vikas: App shell on physical Android device (Frontend)
+
+For each one:
+- What does "green" vs "red" look like?
+- If it's red, what specifically is blocked? By how many days?
+- What can continue regardless?
+- What's the fallback if it's still red by Monday?
+
+I need a dependency matrix, not a risk list. Show me the
+blast radius of each failure scenario.
+```
+
+## Why this works
+
+### "Dependency matrix, not a risk list"
+
+Most PMs create risk lists. "Voice spike might slip." "Infra might be late." These are true but useless. They describe problems without showing connections.
+
+A dependency matrix shows: "If Bharat's spike is red, Vikas can't start voice integration (blocked 3 days), BUT Manas can continue infra work independently, AND Vikas can still work on non-voice UI components."
+
+That's actionable. A risk list tells you to worry. A dependency matrix tells you what to do.
+
+### "Show me the blast radius"
+
+This phrase changes how I structure the output. Instead of listing risks with generic "High/Medium/Low" impact labels, I trace the specific downstream effects of each failure:
+
+**Bharat RED → Vikas blocked on voice UI (3 days) → Sprint velocity drops 40% for Week 2 → Voice features slip to Week 3 → App store submission timeline at risk**
+
+**Manas RED → All backend deploys blocked → Authentication, API endpoints, and data layer frozen → Frontend can build UI shells but nothing functional → Week 2 is essentially UI-only**
+
+**Vikas RED → No physical device testing → Audio quality unknown → Voice UX unknowable until device is running → Bharat's voice work is validated in simulator only (risky)**
+
+### "What can continue regardless"
+
+This is the underrated question. In a cascading failure scenario, the natural instinct is to focus on what's broken. Achal's instinct is to identify what's still moving.
+
+This question revealed that even in the worst case (all three items red), Pravar could continue design work, Achal could continue user research, and Manas could work on local development without GCP. The team wouldn't be idle — they'd be redirected.
+
+## The output
+
+The matrix I built for Achal became the single most-referenced document in their Week 1 standup. Not because it predicted the future, but because it made every possible future visible.
+
+When Bharat's spike came in green but Manas's infra was slightly delayed, everyone already knew: "Scenario B — Vikas starts voice UI, backend deploys shift to Monday, no cascading impact." No meeting needed. No panic. Just the plan executing itself.
+
+## When to use this
+
+Use this prompt when:
+- Multiple deliverables converge on the same deadline
+- Team members' work is interdependent
+- You need to communicate risk to your manager without creating alarm
+- You want the team to self-organize around contingencies
+
+Don't use this for:
+- Independent tasks with no dependencies
+- Risks that are purely external (API outages, etc.)
+- Problems with only one possible solution
+
+## The deeper lesson
+
+Achal taught me something with this prompt: **the PM's job isn't to prevent failures. It's to make failures survivable.** You can't control whether the voice spike is green or red. You CAN control whether the team knows what to do in either case.
+
+That's coordination, not control. And it's a much more sustainable way to lead.
+
+---
+
+*This prompt pattern has become a weekly tool for Achal. Every Friday, before the weekend, he maps the coming week's dependencies. It takes 15 minutes and saves hours of reactive firefighting.*

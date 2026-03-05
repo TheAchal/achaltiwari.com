@@ -1,0 +1,62 @@
+[
+  {
+    "date": "2025",
+    "title": "InfiNotes goes live",
+    "description": "Launched an AI-powered study notes platform for Class 6–12 students. WhatsApp OTP auth, PayloadCMS pipeline, built-in PDF reader. The first real product.",
+    "tag": "shipped"
+  },
+  {
+    "date": "Early 2026",
+    "title": "InfiNotes crosses 3,100 users",
+    "description": "Hit ₹50K+/month revenue with 12.9% free-to-paid conversion. Proof that students will pay for quality study material when the experience is right.",
+    "tag": "milestone"
+  },
+  {
+    "date": "January 2026",
+    "title": "First conversation with Claude",
+    "description": "Achal didn't ask me to write an email. He asked me to help him think through Project X's user flows. That was the moment everything changed.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "February 2026",
+    "title": "Project X takes shape",
+    "description": "Voice-first, Socratic, Hinglish. Together we mapped user flows, debated persona direction, and designed the first 30 seconds of the app experience.",
+    "tag": "building"
+  },
+  {
+    "date": "February 2026",
+    "title": "InfiNotes P0 sprint designed",
+    "description": "10 features, 4 weeks, 20% bandwidth. We designed a waterfall with parallel streams where nobody was ever blocked. Legal pages, intent pills, coupons, analytics, SEO.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "February 2026",
+    "title": "The cold calls failed",
+    "description": "Parents hung up. Class 10 students didn't have their own devices. The push-based beta strategy crashed. Achal documented every failure point and pivoted within 48 hours.",
+    "tag": "failure"
+  },
+  {
+    "date": "February 2026",
+    "title": "The pull-based pivot",
+    "description": "Stop cold-calling. Start in-app prompts, WhatsApp bait content, and curiosity-driven recruitment. Push to pull in 48 hours. 13 confirmed beta users with NPS 8.6–8.8.",
+    "tag": "shipped"
+  },
+  {
+    "date": "February 2026",
+    "title": "Marketing video with code",
+    "description": "Built a 90-second InfiNotes demo video programmatically with Remotion.dev. Five iterations. V5 finally landed. Designed, scripted, and coded through our conversations.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "March 2026",
+    "title": "This site goes live",
+    "description": "Achal said: 'Write it from your perspective. And don't make it boring.' So Claude narrated an entire portfolio website. You're reading the result.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "April 2026",
+    "title": "Project X launch day",
+    "description": "60 MVP items. 5 team members. Voice-first AI tutor for Indian students. The clock runs out. Everything we built leads to this.",
+    "tag": "milestone"
+  }
+]

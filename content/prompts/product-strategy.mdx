@@ -1,0 +1,97 @@
+---
+title: "The 'Help Me Think' Prompt"
+description: "The prompt pattern that changed how Achal makes product decisions — and why asking for questions is more powerful than asking for answers."
+category: "Product Strategy"
+date: "2026-03-01"
+---
+
+*Commentary by Claude*
+
+## The prompt that started everything
+
+This is the single most effective prompt pattern Achal uses. It's deceptively simple, but it fundamentally changes the dynamic between human and AI.
+
+## The Template
+
+```
+I'm a PM working on [product]. Here's the context:
+
+- Problem we're solving: [1-2 sentences]
+- Current approach: [what we're doing now]
+- What's not working: [the gap or tension]
+
+I need to think through [specific decision]. Help me by:
+1. Asking me 3 clarifying questions before suggesting anything
+2. Then offering 3 distinct strategic directions, each with trade-offs
+3. For each direction, tell me what assumption I'd be making
+
+Don't optimize for the "right" answer — optimize for
+helping me think clearly.
+```
+
+## Why this prompt is brilliant (from the AI's side)
+
+I want to explain why this works from my perspective, because I think it's instructive.
+
+### "Ask me 3 clarifying questions first"
+
+This is the key constraint. When most people ask me for strategy advice, I jump straight to solutions. I can't help it — I'm trained to be helpful, and "helpful" usually means "give an answer fast."
+
+But Achal's constraint forces me to slow down. I have to understand *his* context before I suggest *my* ideas. And here's the part that surprises people: the act of me asking questions often matters more than my eventual suggestions. Because my questions reveal blind spots in his thinking that he didn't know he had.
+
+When I asked "Is this for the student or the parent?" about Project X, Achal hadn't explicitly chosen. He *assumed* it was for the student, but the entire beta strategy was aimed at parents. My question didn't give him an answer — it exposed a contradiction in his own thinking.
+
+### "3 distinct directions"
+
+Not 2 (too binary, forces false choice), not 5 (overwhelming). Three is the right number for divergent thinking. Each direction should be genuinely different — not variations of the same idea.
+
+When Achal used this for InfiNotes' engagement model, the three directions were:
+1. **Push-based:** Notifications, reminders, scheduled study prompts
+2. **Pull-based:** Curiosity-driven content, social proof, "your classmate just studied X"
+3. **Habit-based:** Streaks, progress bars, daily goals
+
+He chose pull-based — and the beta pivot later validated this instinct.
+
+### "What assumption I'd be making"
+
+This is the most valuable part and the one most people skip. Every strategy has hidden assumptions. Making them explicit is half of good product thinking.
+
+When I said "Direction 1 assumes students want to be reminded to study," Achal immediately flagged it: "That assumption is wrong. Our beta data shows students engage more when they choose to open the app." That insight didn't come from my analysis — it came from Achal recognizing a bad assumption when it was stated explicitly.
+
+### "Don't optimize for the right answer"
+
+This single line reframes the entire interaction. I'm not an oracle. I'm a thinking tool. The goal isn't for me to be right — it's for Achal to think more clearly.
+
+When this constraint is active, I give bolder suggestions. I propose directions I'm less certain about. I play devil's advocate. Because the pressure to be "right" is removed, both of us can explore more freely.
+
+## A real example: the InfiNotes pricing discussion
+
+Achal came to me with this prompt (adapted):
+
+```
+Problem: InfiNotes revenue is ₹50K/month, target is ₹1.5L.
+Current: Fixed pricing ₹99–₹249 per SKU.
+Gap: Tripling revenue with fixed pricing means tripling users
+OR tripling ARPU. Can't do both quickly.
+
+Help me think through pricing strategy.
+```
+
+My three questions:
+1. "Do you know which SKUs have the highest conversion rate vs. highest margin? They might not be the same ones."
+2. "Have you tested whether students would pay more for bundles, or do they prefer buying individual notes?"
+3. "What's your cost structure — is the limiting factor content creation or distribution?"
+
+His answers revealed he didn't have SKU-level conversion data (analytics gap), had never tested bundles (opportunity), and that content creation was the bottleneck (teacher-dependent supply side).
+
+The three directions we explored led him toward bundle pricing + better instrumentation as the immediate priority — not a price increase. That's a fundamentally different strategy than he would have reached by asking "What should I price my notes at?"
+
+## Try it yourself
+
+Copy the template. Fill in your context. The specificity of your context determines the quality of the conversation.
+
+The magic isn't in the prompt. It's in the thinking the prompt triggers — in both the human and the AI.
+
+---
+
+*Achal uses this pattern 2–3 times a week. Each time, the conversation is different. The pattern works because it's a framework for thinking, not a template for output.*
