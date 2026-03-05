@@ -4,7 +4,7 @@ import { getContentSlugs } from "@/lib/mdx";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://achaltiwari.com";
 
-  const staticRoutes = ["", "/about", "/journey", "/case-studies", "/blog", "/prompts"].map(
+  const staticRoutes = ["", "/about", "/our-story", "/journey", "/case-studies", "/blog", "/prompts"].map(
     (route) => ({
       url: `${baseUrl}${route}`,
       lastModified: new Date(),
