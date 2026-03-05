@@ -1,0 +1,107 @@
+---
+title: "The User Context Stress Test"
+description: "The prompt that kills features before they waste engineering time — by placing them in a real user's actual life, not a product spec."
+category: "User Research"
+date: "2026-03-05"
+---
+
+*Commentary by Claude*
+
+## The prompt that saved Project X from a wrong turn
+
+Some of the best product decisions aren't about what to build — they're about what to stop believing. This prompt exists because Achal almost shipped a voice-first AI tutor to students who couldn't use it out loud.
+
+## The Template
+
+```
+I'm evaluating [feature/decision] for [product].
+
+Here's the user I want you to stress-test against:
+
+- Who: [specific persona — age, context, constraints]
+- When: [time of day they'd use this]
+- Where: [physical environment — be specific]
+- Device: [what they're using]
+- Emotional state: [what they're feeling in that moment]
+
+Now walk me through this user's actual experience:
+1. What happens when they first encounter this feature?
+2. What friction points exist in their real environment?
+3. What assumptions am I making about their behavior
+   that might be wrong?
+4. If this feature fails for THIS user, what's the
+   fallback experience?
+
+Be honest. I'd rather kill a bad idea now than
+discover it in beta.
+```
+
+## Why this prompt changes the conversation
+
+### "Be specific about the environment"
+
+This is the line that does the heavy lifting. Most product specs describe users abstractly — "Class 10 student, ages 14–16, preparing for board exams." That's a demographic, not a person.
+
+When Achal first described Project X's voice-first approach, it sounded right. Voice is natural. Socratic dialogue works better spoken. The AI could feel like a real tutor.
+
+Then I asked one question: "A Class 10 student in a shared bedroom at 10 PM — do they want to talk out loud to their phone to study?"
+
+That question didn't come from product intuition. It came from forcing the feature into a specific physical context. Shared bedroom. 10 PM. Siblings sleeping. Parents in the next room. Suddenly, "voice-first" isn't elegant — it's embarrassing.
+
+### "Emotional state"
+
+This is the detail most PMs skip, and it matters enormously. A student opening a study app at 10 PM isn't curious — they're anxious. They have an exam in two days and they don't understand equilibrium reactions. They want clarity, not conversation.
+
+When the emotional state is anxiety, a chatty Socratic dialogue feels like the AI is stalling. "What do you think the answer is?" isn't helpful when the student is thinking "Just tell me how to solve this so I can sleep."
+
+Achal didn't remove the Socratic method from Project X. But he made it opt-in, not default. That distinction — between a feature being available and being forced — came directly from stress-testing against emotional state.
+
+### "What's the fallback experience?"
+
+This is the question that separates good PMs from great ones. Every feature will fail for some users. The question isn't whether it fails — it's what happens when it does.
+
+For voice-first, the fallback was... nothing. If a student couldn't speak out loud, the entire experience collapsed. There was no text-first mode, no hybrid input, no graceful degradation. The feature had a single point of failure, and it was the user's physical environment — something the product couldn't control.
+
+Achal's response: "We need text-first as the default, with voice as an upgrade." That's a complete inversion of the original concept, and it came from asking about fallbacks, not features.
+
+## The real example: the Class 10 shared bedroom test
+
+Achal filled in the template like this:
+
+```
+Feature: Voice-first Socratic tutoring
+Who: Arjun, 15, Class 10 CBSE, lives in a 2BHK
+     in Lucknow with parents and younger sister
+When: 9:30 PM, after dinner, before sleep
+Where: Shared bedroom with sister (who's 11)
+Device: Father's phone (borrowed for 30 min)
+Emotional state: Stressed — pre-boards in 3 weeks,
+     stuck on organic chemistry
+```
+
+When I walked through Arjun's experience, the problems stacked up fast:
+
+1. He can't speak freely — his sister is doing homework two feet away
+2. He's on borrowed time — 30 minutes, no room for a slow Socratic warm-up
+3. He doesn't have earphones — the AI's voice responses would fill the room
+4. If voice fails, he has no fallback — and he's already stressed
+
+Four friction points, all environmental, all invisible in a feature spec. None of them are about the technology. All of them are about the life the technology is entering.
+
+## When to use this
+
+- **Before committing engineering time** to a feature that assumes specific user behavior
+- **When your team loves a feature** and you need a structured way to challenge it
+- **When user research is limited** and you need to simulate real-world friction
+- **When the feature works perfectly in a demo** but you're not sure about daily use
+- **Not for** technical architecture decisions — this is about human behavior, not system design
+
+## The deeper lesson
+
+The best product decisions come from imagining your user's worst realistic moment — not their best one. If your feature works when the student is stressed, short on time, in a noisy room, on a borrowed device, it'll work everywhere. If it only works in ideal conditions, you haven't built a product — you've built a demo.
+
+Achal doesn't test features against ideal users. He tests them against Arjun at 9:30 PM in a shared bedroom in Lucknow. That's the difference between a spec and a product.
+
+---
+
+*This prompt pattern surfaces in almost every major feature decision for Project X. Achal keeps a running list of "stress test personas" — Arjun is one of five. Each represents a different failure mode the product needs to survive.*
