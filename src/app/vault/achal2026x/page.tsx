@@ -34,15 +34,26 @@ interface StockPick {
   ret5d: number;
   rsi: number;
   isLowPrice: boolean;
+  isAffordable: boolean;
+  sharesPossible: number;
   category: string;
   macdBullish: boolean;
+}
+
+interface PerformanceResult {
+  symbol: string;
+  status: 'TARGET1_HIT' | 'STOPLOSS_HIT' | 'OPEN';
+  profitPct: number;
 }
 
 interface StockData {
   date: string;
   time: string;
+  budget: number;
+  maxPrice: number;
   stable: StockPick[];
   aggressive: StockPick[];
+  yesterdayPerformance: PerformanceResult[];
 }
 
 const STORAGE_KEY = 'achal_stock_portfolio';
@@ -168,16 +179,21 @@ export default function VaultPage() {
     <div key={pick.symbol} className="bg-gray-900 rounded-xl p-4 border border-gray-800">
       <div className="flex justify-between items-start mb-3">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="font-bold text-lg">{pick.symbol}</span>
             {pick.isLowPrice && (
-              <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded">LOW PRICE</span>
+              <span className="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-0.5 rounded">UNDER ₹100</span>
+            )}
+            {pick.isAffordable && !pick.isLowPrice && (
+              <span className="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded">AFFORDABLE</span>
             )}
             <span className={`text-xs px-2 py-0.5 rounded ${pick.category === 'stable' ? 'bg-blue-500/20 text-blue-400' : 'bg-orange-500/20 text-orange-400'}`}>
               {pick.category === 'stable' ? 'STABLE' : 'AGGRESSIVE'}
             </span>
           </div>
-          <p className="text-gray-400 text-sm mt-1">CMP: ₹{pick.price}</p>
+          <p className="text-gray-400 text-sm mt-1">
+            CMP: ₹{pick.price} • Can buy ~{pick.sharesPossible || Math.floor(1000/pick.entry)} shares
+          </p>
         </div>
         <button
           onClick={() => quickAddTrade(pick)}
@@ -256,7 +272,9 @@ export default function VaultPage() {
                 <div className="flex justify-between items-center mb-4">
                   <div>
                     <h2 className="text-xl font-semibold">Daily Stock Picks</h2>
-                    <p className="text-gray-400 text-sm">{stockPicks.date} at {stockPicks.time} IST</p>
+                    <p className="text-gray-400 text-sm">
+                      {stockPicks.date} at {stockPicks.time} IST • Budget: ₹{stockPicks.budget || 1000}
+                    </p>
                   </div>
                   <button
                     onClick={() => window.location.reload()}
@@ -265,6 +283,38 @@ export default function VaultPage() {
                     Refresh
                   </button>
                 </div>
+
+                {/* Yesterday's Performance */}
+                {stockPicks.yesterdayPerformance && stockPicks.yesterdayPerformance.length > 0 && (
+                  <div className="mb-6 p-4 bg-gray-900 rounded-xl border border-gray-800">
+                    <h3 className="text-sm font-medium mb-3 text-gray-300">Yesterday's Performance</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                      {stockPicks.yesterdayPerformance.map((result) => (
+                        <div
+                          key={result.symbol}
+                          className={`p-2 rounded-lg text-center ${
+                            result.status === 'TARGET1_HIT'
+                              ? 'bg-emerald-950/50 border border-emerald-800/50'
+                              : result.status === 'STOPLOSS_HIT'
+                              ? 'bg-red-950/50 border border-red-800/50'
+                              : 'bg-gray-800/50'
+                          }`}
+                        >
+                          <p className="font-medium text-sm">{result.symbol}</p>
+                          <p className={`text-xs ${
+                            result.status === 'TARGET1_HIT' ? 'text-emerald-400' :
+                            result.status === 'STOPLOSS_HIT' ? 'text-red-400' :
+                            result.profitPct >= 0 ? 'text-emerald-400' : 'text-red-400'
+                          }`}>
+                            {result.status === 'TARGET1_HIT' ? '✅ TARGET' :
+                             result.status === 'STOPLOSS_HIT' ? '❌ SL HIT' :
+                             `${result.profitPct >= 0 ? '+' : ''}${result.profitPct}%`}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {stockPicks.aggressive.length > 0 && (
                   <div className="mb-6">
