@@ -31,7 +31,9 @@ interface StockPick {
   target2: number;
   stopLoss: number;
   riskReward: number;
-  ret5d: number;
+  last5d: number;
+  predicted5d: number;
+  confidence: number;
   rsi: number;
   isLowPrice: boolean;
   isAffordable: boolean;
@@ -203,6 +205,26 @@ export default function VaultPage() {
         </button>
       </div>
 
+      {/* Prediction */}
+      <div className={`mb-3 p-3 rounded-lg border ${
+        (pick.predicted5d || 0) >= 3 ? 'bg-emerald-950/30 border-emerald-700' :
+        (pick.predicted5d || 0) > 0 ? 'bg-emerald-950/20 border-emerald-800/50' :
+        'bg-red-950/20 border-red-800/50'
+      }`}>
+        <div className="flex justify-between items-center">
+          <div>
+            <p className="text-gray-400 text-xs">Predicted (Next 5 Days)</p>
+            <p className={`text-lg font-bold ${(pick.predicted5d || 0) >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+              {(pick.predicted5d || 0) >= 0 ? '+' : ''}{pick.predicted5d || 0}%
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-gray-400 text-xs">Confidence</p>
+            <p className="text-white font-semibold">{pick.confidence || 50}%</p>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 gap-2 text-sm">
         <div className="bg-emerald-950/50 rounded-lg p-2">
           <p className="text-gray-400 text-xs">Entry</p>
@@ -223,7 +245,7 @@ export default function VaultPage() {
       </div>
 
       <div className="flex justify-between mt-3 text-xs text-gray-400">
-        <span>5D: <span className={pick.ret5d >= 0 ? 'text-emerald-400' : 'text-red-400'}>{pick.ret5d > 0 ? '+' : ''}{pick.ret5d}%</span></span>
+        <span>Last 5D: <span className={(pick.last5d || 0) >= 0 ? 'text-emerald-400' : 'text-red-400'}>{(pick.last5d || 0) > 0 ? '+' : ''}{pick.last5d || 0}%</span></span>
         <span>RSI: {pick.rsi}</span>
         <span className={pick.macdBullish ? 'text-emerald-400' : 'text-red-400'}>
           MACD: {pick.macdBullish ? 'Bullish' : 'Bearish'}
