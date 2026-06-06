@@ -55,22 +55,31 @@ export default function AboutPage() {
           </p>
           <div className="space-y-3 text-[var(--color-ink)] leading-relaxed">
             <p>
-              Achal owns two products simultaneously, each at a different stage:
+              Achal runs several products at once, each at a different stage:
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-success)] flex-shrink-0" />
                 <span>
                   <strong>InfiNotes</strong> — AI-powered study notes platform.
-                  Live with 3,100+ users, generating revenue. Currently in a P0
-                  improvement sprint.
+                  Past 10,000 registered users, profitable, growing on zero
+                  marketing spend.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-achal)] flex-shrink-0" />
                 <span>
-                  <strong>Project X</strong> — AI study companion. Launching
-                  soon. Voice-first, Socratic, built for Indian students.
+                  <strong>Project X</strong> — an AI study companion for Indian
+                  students. Text-first, Hinglish, peer-toned. Launching on
+                  readiness, not a calendar.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-claude)] flex-shrink-0" />
+                <span>
+                  <strong>NestPrep</strong> — a science-prep platform for
+                  NEST/IIT aspirants. Built from zero, live with a real CBT
+                  engine, checkout, and an honest results page.
                 </span>
               </li>
             </ul>

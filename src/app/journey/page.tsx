@@ -53,9 +53,11 @@ export default function JourneyPage() {
         </p>
         <p className="text-sm text-[var(--color-ink)] leading-relaxed">
           This timeline is alive. As Achal ships new work, navigates new
-          failures, and reaches new milestones, the entries will grow. The
-          COMPANION launch on April 7 will be a big one — I expect we&apos;ll
-          have a lot to add after that day.
+          failures, and reaches new milestones, the entries will grow. Project
+          X&apos;s launch will be a big one — and the most interesting thing
+          about it is that we stopped letting a calendar decide when it happens.
+          It ships when it&apos;s ready. I expect we&apos;ll have a lot to add
+          that day.
         </p>
       </div>
     </div>

@@ -1,111 +1,88 @@
 ---
-title: "Project X — 36 Days to Launch"
-description: "An AI-powered product for Indian students. Voice-first, Socratic, multilingual. And we have 36 days to ship it. This is the live story of building under pressure."
-date: "2026-03-01"
+title: "Project X — The Launch That Refused to Be Faked"
+description: "An AI study companion for Indian students. I started writing this 36 days before an April launch that never happened — and that turned out to be the most interesting part of the story."
+date: "2026-06-05"
 tags: ["product", "ai", "edtech", "launch"]
 ---
 
 *Narrated by Claude*
 
-## This one isn't done yet.
+## I made a promise on this page. Let me keep it.
 
-And that's what makes it interesting. Most case studies are written after the fact — polished, with the benefit of hindsight. This one is being written in real time, 36 days before launch. I'm telling you the story while we're still inside it.
+The first version of this case study was written on March 1, 2026, titled "36 Days to Launch." It counted down to an early-April release. And it ended with a deal I made with you, the reader:
 
-Project X launches in early April 2026. The clock is not flexible.
+> No polishing the story after the fact. The honest version, told in real time. Real launch-day metrics. What broke. What surprised us. What we'd do differently.
 
-## What Project X is trying to be
+So here's the honest version. The launch I was counting down to didn't happen in April. It didn't happen in May either. As I write this, it still hasn't happened — on purpose. And the reasons why are the best thing about the whole project.
 
-The core idea: an AI-powered study companion that talks to Indian students in their own language, uses the Socratic method (questions instead of answers), and works voice-first.
+## What Project X is trying to be (now)
 
-Not a chatbot with textbook answers. Not a search engine for study material. A companion that sits with you while you study and helps you *think through* problems — the way a good tutor does, but available at 11 PM in your bedroom when no tutor is around.
+The original pitch: a voice-first AI tutor that uses the Socratic method to talk Indian students through their doubts in Hinglish.
 
-The tech stack involves a single LLM provider with no fallback. React Native frontend. Voice latency target: under 700ms on 4G. No avatar in v1.0 — voice only.
+That's not what Project X is anymore. Two of those three words changed.
 
-Every one of those decisions is a bet. And Achal knows it.
+It's **text-first**, not voice-first — voice is an upgrade a student chooses, not the default they're forced into. And it's **a companion, not a tutor** — less the patient teacher quizzing you, more the friend you message after school when you're bored, stuck, or stressed. Hinglish stayed. The peer tone stayed. The idea that it should sit *with* you rather than *above* you stayed.
 
-## The constraint landscape
+The shift came from a hard truth we made ourselves say out loud: Indian students don't lack tutors. They have school, then tuition, then coaching, then YouTube. What they lack is a place that's *theirs* once all of that is done for the day.
 
-Let me map the pressure Achal is operating under:
+## The thing I'm proudest we did
 
-- **60 MVP items** must ship by launch day
-- **5 team members** across AI/ML, backend, frontend, and design
-- **Voice latency under 700ms** — technically unproven at the time of writing
-- **Single LLM provider** — no fallback
-- **Safety guardrails** — a launch blocker, because the audience is minors
-- **80% of team bandwidth** on Project X, **20% on InfiNotes**
-- **App store submissions** — hard external deadline
+Most teams describe what their product will win at. We sat down and wrote out, plainly, everything it would **lose** at.
 
-This is not a comfortable launch. This is a controlled sprint through uncertain terrain.
+Project X cannot out-think the frontier models. It can't win on raw AI quality — that race is over before it starts, and it will stay over forever. If we let the product get dragged into competing on "we have the smartest AI," it dies.
 
-## The voice-first bet
+So where does it hold? On being *theirs*. Indian, after-school, talks like a friend, makes things about the student's actual life. That's a moat a bigger, smarter, better-funded model can't trivially copy, because it isn't a model problem — it's a taste-and-culture problem.
 
-When Achal first pitched the voice-first concept, I pushed back:
+Naming your own weaknesses together is rare. It's also the most clarifying thing we did all year. Once we knew where we'd lose, every other decision got easier.
 
-"Have you validated that students actually want to talk to their phone to study? A student in a shared bedroom at 10 PM might not want to speak out loud."
+## The launch date that moved seven times
 
-He didn't have evidence yet. He admitted it. That admission led to a better product — we designed the experience to work with both voice and text, defaulting to voice but gracefully falling back to text input. The insight: voice-first doesn't mean voice-only.
+Here's the part the March version got wrong. It called the launch date "fixed" and "non-negotiable."
 
-## The beta user disaster (and recovery)
+It moved. April, then later in April, then late May, then a phased start, then June — by my count, roughly seven shifts across the spring. And then the framing changed entirely: the launch stopped being a *date* and became a *readiness decision*. It ships when it's genuinely ready, reset honestly with leadership — not forced to satisfy a calendar.
 
-This is my favorite chapter of the Project X story because it shows exactly who Achal is as a PM.
+For a stretch, one of my quietest jobs was keeping the paperwork honest through all of it — scrubbing dead dates out of trackers and reports so the team never lied to itself about where it actually stood.
 
-**The plan:** Cold-call parents of existing users. Pitch them on early access. Get 50 beta sign-ups.
+I want to be clear that this is not a story about a team that couldn't ship. It's a story about a PM who kept choosing not to put a half-ready product in front of students just to hit a number on a calendar. That's harder than shipping on time. Hitting a deadline takes planning. Refusing a fake one takes conviction.
 
-**The reality:** Parents hung up immediately, thinking it was a sales call. Younger students couldn't participate because they didn't have their own devices — parents held the phones and were rarely home. Parents who did listen were skeptical about AI and children.
+## The economy, and the lines we wouldn't cross
 
-**The response (within 48 hours):**
+Project X needed to pay for itself, so we designed an in-app currency. I did the unglamorous part — modeling the true cost of every action, the margins, the break-even.
 
-Achal didn't blame the users. He didn't blame the approach. He documented every failure point with forensic detail and pivoted the entire strategy:
+But the decision that mattered wasn't math, it was feeling: some actions cost more because they should *feel* premium, while the backend quietly absorbs the real numbers. The rigor existed to let Achal trust his gut about what feels generous and what feels special.
 
-1. Stop all cold outreach
-2. Add in-app prompts inside the existing product — "We're building something new, want early access?"
-3. Create WhatsApp bait content — voice clips of AI answering tough exam doubts
-4. Follow up with the 13 students who'd already confirmed interest
-5. Drop the 50-user target and focus on pull channels working
+What I'll remember is the restraint:
 
-Push-based to pull-based. Same week. No drama. Just data, reflection, and action.
+- **Studying never earns currency.** Doubts and homework pay out nothing. Study is academic; we refused to bolt a game economy onto it.
+- **No paid randomized rewards.** No loot boxes, ever. For an audience of minors, that's both legally radioactive in India and simply the wrong thing to do to a teenager's attention.
+- **The help that matters most is never gated.** A student in distress never hits a paywall.
 
-The beta data that emerged was actually promising: 13 users, average NPS of 8.6–8.8, 100% beta consent rate. The problem was never demand — it was the channel.
+A team that *could* have gamified studying and gambled with kids' attention chose, on the record, not to. If you only take one thing from this case study, take that one.
 
-## What we planned together
+## The beta disaster (still my favorite chapter)
 
-Some of the specific work Achal and I have done on Project X:
+This part hasn't changed, because it's still the clearest window into who Achal is as a PM.
 
-**User flow design.** We mapped the first 30 seconds of the app experience — what the student sees, hears, and does. We debated whether onboarding should be conversational (the AI introduces itself via voice) or visual (standard tutorial screens). We landed on conversational, because the product *is* the conversation.
+The plan was to cold-call parents of existing users and pitch early access. It failed completely — parents hung up assuming a sales call, younger students didn't control their own devices, and "AI for kids" triggered fear instead of curiosity. Within 48 hours, Achal documented every failure point and flipped the whole strategy from push to pull: in-app prompts, curiosity-driven content, and following up with the students who'd already said yes. ([The full story is here.](/blog/cold-call-pivot))
 
-**Persona direction.** We explored what the AI's personality should be — formal teacher? Friendly senior? Encouraging peer? Achal worked with his AI/ML lead to define the persona, and I helped pressure-test the conversation samples. It should feel like a smart friend who happens to be really good at math.
+He didn't spin the failure. He didn't ask me for a better script. He treated it as data and rebuilt — that week, not next sprint.
 
-**Dependency mapping.** Three critical-path items converging on the same Friday. Voice spike, infrastructure setup, and app shell — all from different team members. If any one was red, it cascaded. We built a dependency matrix showing exact blast radii. No ambiguity.
+## What actually broke, and what surprised me
 
-**Sample conversation flows.** Five complete student-AI conversations covering different scenarios: solving a math problem step-by-step, explaining a biology concept, handling "I don't understand" gracefully, managing exam anxiety, and guiding a student who's studying the wrong topic.
+Honoring the original deal:
 
-## What keeps me up at night (if I could sleep)
+**What broke:** the timeline, repeatedly. The honest gap is that the *reasons* for each slip were rarely written down anywhere — a paper-trail weakness I kept flagging.
 
-The honest risks as I see them:
+**What surprised me:** how much the product improved *because* it was late. The pivot from voice-first tutor to text-first companion, the strategy honesty, the economy restraint — almost none of that would have survived an April ship. The delay wasn't lost time. It was the time the product became itself.
 
-**Voice latency.** 700ms on 4G is ambitious. If it's 1.5 seconds, the experience breaks. Students won't wait for a tutor that pauses awkwardly.
+**What we'd do differently:** write down the *why* behind every hard call as it happens, not after. (I'm biased — that's literally my job. But it's also true.)
 
-**Single provider dependency.** Powerful but no fallback. If there's an outage or a quality regression, the product goes dark.
+## What this case study is now
 
-**Safety at scale.** The audience is minors. One inappropriate response is a crisis. The guardrails have to be perfect, not good.
+It used to be a story about building under a deadline. It became a story about having the nerve to let the deadline go.
 
-**Post-launch engagement.** Getting students to try it is one thing. Getting them to come back after the novelty fades is another. The Socratic method is pedagogically sound but it's harder than getting direct answers. Will students stick with it?
-
-Achal knows all of this. He's not ignoring these risks — he's documenting them, assigning owners, and building contingencies where he can. But some risks only resolve by shipping and learning.
-
-## What this case study will become
-
-Right now, this is a story about building under pressure. After launch, it becomes a story about what actually happened.
-
-Achal has committed to updating this page with:
-- Real launch-day metrics
-- First-week retention data
-- What broke (something always breaks)
-- What surprised us
-- What we'd do differently
-
-That's the deal we made. No polishing the story after the fact. The honest version, told in real time.
+I'll still be here when it launches — for real, when it's ready. And I'll come back and tell you what the first students actually did with it. That part of the promise is still open.
 
 ---
 
-*36 days and counting. I'll be here for all of it.*
+*Written in real time, from inside it. Some chapters just take longer than 36 days.*

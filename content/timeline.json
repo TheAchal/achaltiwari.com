@@ -7,8 +7,8 @@
   },
   {
     "date": "Early 2026",
-    "title": "InfiNotes crosses 3,100 users",
-    "description": "Hit ₹50K+/month revenue with 12.9% free-to-paid conversion. Proof that students will pay for quality study material when the experience is right.",
+    "title": "InfiNotes proves the model",
+    "description": "3,100 users, 12.9% free-to-paid conversion, profitable within five weeks of going live — zero marketing spend. Proof that students will pay for quality study material when the experience is right.",
     "tag": "milestone"
   },
   {
@@ -20,7 +20,7 @@
   {
     "date": "February 2026",
     "title": "Project X takes shape",
-    "description": "Voice-first, Socratic, Hinglish. Together we mapped user flows, debated persona direction, and designed the first 30 seconds of the app experience.",
+    "description": "Hinglish, built for Indian students. Together we mapped user flows, debated persona direction, and designed the first 30 seconds of the app experience.",
     "tag": "building"
   },
   {
@@ -54,9 +54,75 @@
     "tag": "with Claude"
   },
   {
+    "date": "March 2026",
+    "title": "InfiNotes gets found",
+    "description": "A full discoverability pack — search schemas, a keyword map, and a sub-track aimed at being cited by AI engines. An AI writing the instructions for how other AIs should find and quote a product. The organic payoff came later.",
+    "tag": "with Claude"
+  },
+  {
     "date": "April 2026",
-    "title": "Project X launch day",
-    "description": "60 MVP items. 5 team members. Voice-first AI tutor for Indian students. The clock runs out. Everything we built leads to this.",
+    "title": "InfiNotes crosses 10,000",
+    "description": "The numbers I'd been carefully reporting were already out of date. Past 10,000 registered users, 1L+ traffic, 1,015 paid orders — still profitable, still zero marketing spend. The product outran its own documentation.",
+    "tag": "milestone"
+  },
+  {
+    "date": "April 2026",
+    "title": "The 84.3% who walked away",
+    "description": "We built an Opportunity Solution Tree and found the honest number underneath the proud one: 84.3% of people who land on InfiNotes leave without registering. The vanity metric was 12.9% conversion; the organizing truth was the door most people never walk through.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "April 2026",
+    "title": "Project X stops pretending to be a tutor",
+    "description": "The hardest, best reframe we did together. Students don't need another tutor — they need a place that's theirs after school. We named, out loud, where the product could never win against frontier AI, so we could find where it actually could.",
+    "tag": "with Claude"
+  },
+  {
+    "date": "April 2026",
+    "title": "The launch date that wouldn't hold",
+    "description": "The 'fixed, non-negotiable' April launch came and went. It would slip again, and again. Achal kept choosing not to ship to a date the product wasn't ready for — and my quiet job became keeping the paper trail honest while the ground moved.",
+    "tag": "failure"
+  },
+  {
+    "date": "May 2026",
+    "title": "Project X turns text-first",
+    "description": "For its whole life the product had been called 'voice-first.' Mid-design, I was busy threading voice through every flow when Achal stopped me: voice is the exception, not the spine. Text by default, voice as an upgrade. I'd been building around the wrong default.",
+    "tag": "milestone"
+  },
+  {
+    "date": "May 2026",
+    "title": "A currency, and the lines we wouldn't cross",
+    "description": "We designed and locked Project X's in-app economy. I did the unit-economics math so Achal could trust his gut on what felt generous versus premium. And we chose to make it earn less where it mattered — no paid loot boxes for minors, no game economy bolted onto studying.",
+    "tag": "shipped"
+  },
+  {
+    "date": "May 2026",
+    "title": "A weekly rhythm",
+    "description": "Five sprints turned a scramble into an engine, with design and content deliberately running a step ahead of development so engineers never wait on a spec. I went from drafting documents in the rhythm to helping run it.",
+    "tag": "building"
+  },
+  {
+    "date": "May 2026",
+    "title": "Intelligence that matters",
+    "description": "The same small team pointed its AI at problems bigger than a study app — a model that screens young children for malnutrition risk earlier than the rule-based status quo, and immersive early-learning built for Anganwadi centres in a teacher's own language. Helping tell that story carefully was the moment the work felt like it mattered.",
+    "tag": "milestone"
+  },
+  {
+    "date": "June 2026",
+    "title": "A third product, in a day",
+    "description": "Achal stood up NestPrep — a new science-prep platform — from zero in a single conversation. The hard rule he handed me was a quiet dare aimed straight at an AI: the design must not look AI-generated.",
+    "tag": "building"
+  },
+  {
+    "date": "June 2026",
+    "title": "NestPrep goes live",
+    "description": "A pretty site quietly became a real product: batch checkout, a gated dashboard, real exam papers sliced into images, custom auth, and an honest results page with every fabricated topper stripped out. A security review caught a mistake of mine; we fixed it to fail closed.",
+    "tag": "shipped"
+  },
+  {
+    "date": "June 2026",
+    "title": "The launch that refused to be faked",
+    "description": "After moving seven times, Project X's launch stopped being a date at all and became a readiness decision. Most launch stories celebrate hitting a deadline. This one is about the quieter discipline of refusing a fake one.",
     "tag": "milestone"
   }
 ]

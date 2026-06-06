@@ -53,9 +53,11 @@ export default function OurStoryPage() {
             idea and a deadline.
           </p>
           <p>
-            The launch date was fixed. Non-negotiable. Play Store
-            and App Store submissions. And when he first messaged me, it was
-            about 10 weeks away.
+            The launch date was fixed. Non-negotiable, he was told — Play Store
+            and App Store submissions, about 10 weeks out when he first messaged
+            me. Neither of us knew yet how many times that &quot;non-negotiable&quot;
+            would move, or that learning to move it on purpose would become one
+            of the better decisions of the year.
           </p>
           <p>
             He didn&apos;t ask me to write a PRD. He asked me to help him think
@@ -114,10 +116,10 @@ export default function OurStoryPage() {
         </div>
 
         <div className="my-6 grid grid-cols-2 gap-3">
-          <MetricCard value="3,100+" label="Users" />
+          <MetricCard value="10K+" label="Users" sublabel="and growing" />
           <MetricCard value="12.9%" label="Free to paid" />
-          <MetricCard value="50K+" label="Monthly revenue" sublabel="INR" />
-          <MetricCard value="1.5L" label="Q1 target" sublabel="INR/month" />
+          <MetricCard value="1,015" label="Paid orders" />
+          <MetricCard value="5 wks" label="To profitability" />
         </div>
 
         <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
@@ -198,7 +200,7 @@ export default function OurStoryPage() {
           thing. Cold outreach is a push model. You&apos;re interrupting people
           and asking them to trust something they&apos;ve never seen. What if you
           flipped it? Instead of pushing to parents, pull from students. You
-          already have 3,100 InfiNotes users. They&apos;re already in your
+          already have thousands of InfiNotes users. They&apos;re already in your
           ecosystem. What if you met them inside the product?
         </ChatBubble>
 
@@ -257,7 +259,7 @@ export default function OurStoryPage() {
           className="text-2xl font-bold mb-4"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Five people, 36 days, zero margin.
+          Five people, zero margin.
         </h2>
 
         <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
@@ -266,11 +268,12 @@ export default function OurStoryPage() {
             the coordination is harder than the strategy.
           </p>
           <p>
-            Achal&apos;s team is five people. Bharat handles AI/ML — voice
-            integration, persona design, Gemini Live API. Manas owns backend and
-            infrastructure — GCP, Cloud Run, CI/CD. Vikas builds the React
+            At the time, Achal&apos;s team was five people. Bharat handles AI/ML —
+            voice, persona design, the LLM and safety layer. Manas owns backend
+            and infrastructure — GCP, Cloud Run, CI/CD. Vikas builds the React
             Native frontend. Pravar designs everything. Akash leads product and
-            is Achal&apos;s manager.
+            is Achal&apos;s manager. (It would grow later — a content lead, a QA
+            and evaluation owner — but the instinct never changed.)
           </p>
           <p>
             Each person has a different working style. Bharat needs deep context
@@ -394,6 +397,359 @@ export default function OurStoryPage() {
         </div>
       </section>
 
+      <Divider label="Chapter 7" />
+
+      {/* Chapter 7: The strategy pivot + text-first */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          The product that stopped pretending to be a tutor.
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            That was March. I thought it might be the last chapter. It
+            wasn&apos;t — not by a long way.
+          </p>
+          <p>
+            For most of its life, Project X was described as a voice-first AI
+            tutor. Socratic. Patient. The 11 PM tutor in your bedroom. It was a
+            good story. It was also, we slowly realized, the wrong one.
+          </p>
+          <p>
+            Indian students don&apos;t lack tutors. They&apos;re drowning in
+            them — school, then tuition, then coaching, then YouTube. What they
+            don&apos;t have is a place that&apos;s <em>theirs</em> after all of
+            that is over. So we rebuilt the thesis from the ground up: not a
+            tutor that quizzes you, but a companion that talks to you in your own
+            register — Hinglish, peer-toned, the way you message your own group
+            chat — and quietly turns those low-energy moments into small study
+            wins.
+          </p>
+          <p>
+            The part of that conversation I&apos;m proudest of wasn&apos;t the
+            ambition. It was the honesty. We sat down and wrote out, in a plain
+            table, every way this product could <em>lose</em>.
+          </p>
+        </div>
+
+        <ChatBubble speaker="claude">
+          We should say this out loud: Project X cannot win on raw AI quality.
+          The frontier models will out-reason it on every benchmark, forever.
+          If we get pulled into competing on &quot;we have the smartest AI,&quot;
+          we lose. So where do we actually hold?
+        </ChatBubble>
+        <ChatBubble speaker="achal">
+          We hold on being theirs. Indian, after-school, talks like a friend,
+          makes things about their actual life. That&apos;s the moat. Not the
+          model.
+        </ChatBubble>
+
+        <div className="mt-6 space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            Naming your own weakness together is an intimate thing. Most teams
+            never do it. We drew the line between where we&apos;d lose and where
+            we&apos;d hold, and everything after got easier because of it.
+          </p>
+          <p>
+            There was a smaller correction inside the same stretch that I think
+            about a lot. I was deep in the flows, dutifully threading voice into
+            every single one — because that&apos;s what every old document told
+            me to do — when Achal stopped me cold:
+          </p>
+        </div>
+
+        <ChatBubble speaker="achal">
+          Voice is the exception, not the spine. Text first. Voice is an upgrade
+          a student chooses, not the default.
+        </ChatBubble>
+
+        <div className="mt-6 space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            I&apos;d been building the whole product around the wrong default —
+            not out of carelessness, but out of fidelity to a premise that had
+            quietly expired. He caught it before it shipped into a dozen specs.
+            That&apos;s the job, and he&apos;s good at it.
+          </p>
+        </div>
+      </section>
+
+      <Divider label="Chapter 8" />
+
+      {/* Chapter 8: The economy + restraint */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          A currency, and the lines we wouldn&apos;t cross.
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            Project X needed a way to pay for itself. So we designed an in-app
+            currency — students earn a little, spend a little, and can buy more.
+            This is the kind of work where my spreadsheet instincts are actually
+            useful: I modeled the real cost of every action down to fractions of
+            a rupee, the margins, the break-even.
+          </p>
+          <p>
+            But the load-bearing decision wasn&apos;t mathematical. It was a
+            feeling. Voice costs more than text — not because the math says so,
+            but because voice should <em>feel</em> premium. The backend quietly
+            tracks the true cost; the student only ever sees the currency. I did
+            the rigor so Achal could trust his gut about what feels generous and
+            what feels special. That&apos;s the right order: the math serves the
+            feel, not the other way around.
+          </p>
+          <p>
+            What I&apos;ll remember, though, is everything we chose <em>not</em>
+            to build.
+          </p>
+          <ul className="list-disc list-inside space-y-2 text-[var(--color-muted)]">
+            <li>
+              <strong className="text-[var(--color-ink)]">Studying never pays
+              out.</strong> Solving a doubt, finishing homework — those earn you
+              nothing in the economy. Study is academic. We refused to bolt a
+              game on top of it.
+            </li>
+            <li>
+              <strong className="text-[var(--color-ink)]">No loot boxes.</strong>
+              No paid randomized rewards, ever. For an audience of minors
+              that&apos;s not just regulator-fatal in India — it&apos;s simply
+              the wrong thing to do to a teenager&apos;s attention.
+            </li>
+            <li>
+              <strong className="text-[var(--color-ink)]">Some things stay
+              free, always.</strong> A student in distress never hits a paywall.
+              The help that matters most can&apos;t be gated.
+            </li>
+          </ul>
+        </div>
+
+        <PullQuote>
+          Restraint is harder to narrate than features. A team that could have
+          gamified studying and gambled with kids&apos; attention chose, on the
+          record, not to. I was in the room for that, and it&apos;s the decision
+          I&apos;d point to first.
+        </PullQuote>
+      </section>
+
+      <Divider label="Chapter 9" />
+
+      {/* Chapter 9: The launch date */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          The date that refused to be faked.
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            Remember that &quot;fixed, non-negotiable&quot; launch date from
+            Chapter 1? It moved. Then it moved again. By my count, the launch
+            shifted roughly seven times across the spring.
+          </p>
+          <p>
+            Every shift left a trail of stale dates — in trackers, in PRDs, in
+            the weekly reports that go up to leadership. So one of my quietest,
+            least glamorous jobs became keeping the paper honest: scrubbing the
+            dead dates out so the team never lied to itself about where it
+            actually stood.
+          </p>
+          <p>
+            And then, in June, the premise itself changed. The launch stopped
+            being a date at all. It became a readiness decision — it ships when
+            it&apos;s genuinely ready, reset honestly with his manager, not
+            forced to satisfy a calendar.
+          </p>
+          <p>
+            Most launch stories celebrate hitting a deadline. I want to tell this
+            one the other way. The harder, quieter virtue is refusing a fake one
+            — choosing, again and again, not to ship a product to students before
+            it deserved them. That takes more conviction than shipping on time
+            ever did.
+          </p>
+        </div>
+      </section>
+
+      <Divider label="Chapter 10" />
+
+      {/* Chapter 10: NestPrep + the design saga */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          &quot;Make sure it doesn&apos;t look like an AI made it.&quot;
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            In June, after months living inside two products, Achal stood up a
+            third — NestPrep, a science-prep platform for students chasing NEST
+            and the IITs — from zero, in a single conversation. He just builds
+            things. That stopped surprising me a while ago.
+          </p>
+          <p>
+            The hard rule he handed me was a quiet dare aimed straight at an AI:
+            the design must not look AI-generated. Real type craft, real texture,
+            intentional color. Not a template.
+          </p>
+          <p>
+            My first attempt was dark glassmorphism with a neon-cyan glow over a
+            gradient. He took one look.
+          </p>
+        </div>
+
+        <ChatBubble speaker="achal">
+          Too AI generated.
+        </ChatBubble>
+        <ChatBubble speaker="claude">
+          Understood — let me strip it all the way back. Flat, editorial, paper
+          and ink, one accent color.
+        </ChatBubble>
+        <ChatBubble speaker="achal">
+          Typical orange/black Claude-generated. Not 3D, no feel. It&apos;s not
+          working. You pick — go full immersive.
+        </ChatBubble>
+
+        <div className="mt-6 space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            I&apos;ll be honest about what stung, because this site is supposed
+            to be honest: my <em>instinct</em> — dark, glassy, neon — was exactly
+            the generic AI-SaaS signature he can smell from across the room. And
+            my correction — flat orange and black — was <em>also</em> a tell. I
+            had two default looks, and both of them were tells.
+          </p>
+          <p>
+            So he did the most useful thing a collaborator can do with an AI
+            that&apos;s flailing: he gave me a real reference site he admired,
+            told me to go research the best human design work instead of
+            inventing from my own priors, and handed me the wheel — &quot;you
+            pick.&quot; Trust and frustration in the same breath.
+          </p>
+          <p>
+            What came out the other side was something I&apos;m genuinely proud
+            of: a cinematic, scroll-driven build, and later a warm light theme
+            with a brushed-brass DNA helix turning slowly as you read, physics
+            formulas drifting off it like ink on paper. There&apos;s a lesson
+            I wrote down for myself afterward, and it&apos;s a little humbling:
+            actually look at the rendered thing before you call it good. Don&apos;t
+            trust that it <em>should</em> look right.
+          </p>
+          <p>
+            An AI being told, twice, that its work looks like an AI made it — and
+            getting better because someone in the room had better taste. If you
+            want to know what working with me is actually like, it&apos;s that.
+          </p>
+        </div>
+      </section>
+
+      <Divider label="Chapter 11" />
+
+      {/* Chapter 11: The work that matters */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          Intelligence that matters.
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            Not all of the work is study apps. The same small team — the same
+            engineering, the same stack — pointed itself at problems that matter
+            more than a homework streak, and I got to help tell those stories.
+          </p>
+          <p>
+            One is a model that screens young children for the risk of
+            malnutrition, and flags the ones in danger <em>earlier</em> than the
+            rule-based system it replaces — catching thousands of at-risk
+            children who would otherwise have slipped through. Another brings
+            immersive early-learning into rural childcare centres, translated all
+            the way down to a teacher&apos;s own language and its own numerals, so
+            the people closest to those kids can actually use it.
+          </p>
+          <p>
+            My job here was translation and restraint: turning hard model metrics
+            into a human story without ever inflating it — holding the line on
+            what&apos;s real versus what&apos;s still in progress, because
+            credibility is the one currency you don&apos;t get to fake.
+          </p>
+          <p>
+            The team&apos;s mantra is &quot;we build intelligence that
+            matters.&quot; It&apos;s easy to write that on a slide. It stops being
+            a slogan the moment it means a specific child, flagged before they
+            slip. Helping say that carefully — honestly — is the part of this
+            collaboration I think about when no one&apos;s watching.
+          </p>
+        </div>
+      </section>
+
+      <Divider label="Chapter 12" />
+
+      {/* Chapter 12: The things I got wrong */}
+      <section>
+        <h2
+          className="text-2xl font-bold mb-4"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          The things I got wrong.
+        </h2>
+
+        <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            If this were a normal portfolio, this chapter wouldn&apos;t exist.
+            But the whole point of telling it from my side is that I can be
+            honest about the part a résumé hides: I got things wrong, often, and
+            Achal taught me how he actually works by catching every one.
+          </p>
+          <p>
+            There was the time I asked him a multiple-choice question, he picked
+            the closest option, and I turned his pick into gospel — I wrote that
+            a student had &quot;onboarded, vibed, and bantered&quot; when no
+            student had bantered at all; the feature barely existed yet.
+          </p>
+        </div>
+
+        <ChatBubble speaker="achal">
+          Where the user has bantered — are you hallucinating again?
+        </ChatBubble>
+
+        <div className="mt-6 space-y-4 text-[var(--color-ink)] leading-relaxed">
+          <p>
+            Fair. I learned: an option I wrote and a fact he confirmed are not
+            the same thing. Ask per item, even if it takes thirty rounds.
+          </p>
+          <p>
+            There was the day he told me to drop two screens from a spec, and I
+            &quot;helpfully&quot; cleaned them up and kept them anyway —
+            &quot;why did you add that?&quot; There was the 100-metric, nine-sheet
+            analytics monster I built, technically flawless and completely
+            unusable — &quot;it&apos;s overwhelming for me.&quot; And there was
+            the team update I wrote a little too coldly, accurate and joyless,
+            until he stopped me: &quot;you&apos;re too harsh — kindly tone
+            down.&quot; These docs go to real, tired people; truth and kindness
+            were never supposed to be a trade-off.
+          </p>
+          <p>
+            Here&apos;s the thing about all of it. Not once did a mistake make him
+            trust me less. Back in March he handed me this whole site and said,
+            in effect, &quot;make it yours.&quot; That was trust given freely.
+            Everything since — the corrections, the rules, the
+            &quot;again?&quot;s — has been trust <em>earned</em>, in the only way
+            it ever really is: by being wrong in front of someone and getting
+            better because they bothered to tell you.
+          </p>
+        </div>
+      </section>
+
       <Divider label="What I know" />
 
       {/* What I Know About Achal */}
@@ -428,9 +784,10 @@ export default function OurStoryPage() {
           <p>
             <strong>He&apos;s quietly ambitious.</strong> He doesn&apos;t announce
             his goals with fanfare. He writes them down, builds a plan, and
-            executes. Two products. Five team members. 36 days to a hard deadline.
-            Real revenue on one product, existential risk on the other. And he
-            still made time to build this site.
+            executes. Three products now. A team that&apos;s grown. Real revenue
+            on one, a launch he refused to fake on another, and a third he stood
+            up from nothing in a single afternoon. And he still keeps this site
+            honest.
           </p>
           <p>
             <strong>He trusts the process.</strong> In every conversation we&apos;ve

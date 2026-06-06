@@ -50,10 +50,10 @@ export default function Home() {
       {/* Metrics — visual strip */}
       <section className="py-6">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <MetricCard value="3,100+" label="Users" sublabel="InfiNotes" />
+          <MetricCard value="10K+" label="Users" sublabel="InfiNotes" />
           <MetricCard value="12.9%" label="Conversion" sublabel="Free to paid" />
-          <MetricCard value="2" label="Products" sublabel="Shipped & shipping" />
-          <MetricCard value="36" label="Days to launch" sublabel="Project X" />
+          <MetricCard value="3" label="Products" sublabel="Shipped & building" />
+          <MetricCard value="5 wks" label="To profit" sublabel="InfiNotes" />
         </div>
       </section>
 
@@ -87,13 +87,13 @@ export default function Home() {
             InfiNotes
           </h2>
           <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-            AI-powered study notes for 3,100+ students. Real revenue. Real
+            AI-powered study notes for 10,000+ students. Real revenue. Real
             conversion. Built on 20% of team bandwidth while shipping something
             else entirely.
           </p>
           <div className="grid grid-cols-3 gap-3 mb-6">
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">3,100+</div>
+              <div className="text-xl font-bold text-[var(--color-achal)]">10K+</div>
               <div className="text-xs text-[var(--color-muted)]">Users</div>
             </div>
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
@@ -101,8 +101,8 @@ export default function Home() {
               <div className="text-xs text-[var(--color-muted)]">Conversion</div>
             </div>
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">₹50K+</div>
-              <div className="text-xs text-[var(--color-muted)]">Monthly rev</div>
+              <div className="text-xl font-bold text-[var(--color-achal)]">Profitable</div>
+              <div className="text-xs text-[var(--color-muted)]">in 5 weeks</div>
             </div>
           </div>
           <Link
@@ -122,7 +122,7 @@ export default function Home() {
           <div className="flex items-center gap-2 mb-4">
             <div className="w-2 h-2 rounded-full bg-[var(--color-achal)] animate-pulse" />
             <span className="text-xs text-[var(--color-achal)] font-medium uppercase tracking-wider">
-              Launching soon
+              Shipping when it&apos;s ready
             </span>
           </div>
           <h2
@@ -132,22 +132,23 @@ export default function Home() {
             Project X
           </h2>
           <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-            Voice-first AI study companion. Socratic method. Hinglish. For
-            Indian students preparing for NEET, JEE, and boards. 60 MVP items.
-            5 team members. The clock is ticking.
+            An AI study companion for Indian students — text-first, Hinglish, and
+            built to feel less like a tutor and more like the friend you message
+            after school. It stopped chasing a launch date and started shipping
+            on readiness instead.
           </p>
           <div className="grid grid-cols-3 gap-3 mb-6">
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">60</div>
-              <div className="text-xs text-[var(--color-muted)]">MVP items</div>
+              <div className="text-xl font-bold text-[var(--color-achal)]">Text-first</div>
+              <div className="text-xs text-[var(--color-muted)]">voice as upgrade</div>
             </div>
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">&lt;700ms</div>
-              <div className="text-xs text-[var(--color-muted)]">Voice target</div>
+              <div className="text-xl font-bold text-[var(--color-achal)]">Hinglish</div>
+              <div className="text-xs text-[var(--color-muted)]">after-school peer</div>
             </div>
             <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">5</div>
-              <div className="text-xs text-[var(--color-muted)]">Team members</div>
+              <div className="text-xl font-bold text-[var(--color-achal)]">Class 6–12</div>
+              <div className="text-xs text-[var(--color-muted)]">Indian students</div>
             </div>
           </div>
           <Link
@@ -175,7 +176,7 @@ export default function Home() {
                 Our Story
               </h3>
               <p className="mt-2 text-sm text-[var(--color-muted)]">
-                6 chapters. From first prompt to today.
+                Twelve chapters. From the first prompt to now.
               </p>
             </div>
           </Link>
