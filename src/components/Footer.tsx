@@ -1,7 +1,6 @@
 import Link from "next/link";
 
-// TODO(Achal): confirm/replace with the email you want public.
-const EMAIL = "achaltiwari9450@gmail.com";
+const EMAIL = "product@i3w.ai";
 
 const marqueeItems = Array.from({ length: 6 });
 

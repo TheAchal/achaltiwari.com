@@ -8,7 +8,7 @@ export default function MetricCard({ value, label, sublabel }: MetricCardProps) 
   return (
     <div className="bg-[var(--color-card)] rounded-lg p-5 border border-[var(--color-beige-dark)] hover:border-[var(--color-achal)]/30 transition-colors">
       <div
-        className="text-3xl sm:text-4xl font-bold chrome-text leading-none"
+        className="text-3xl sm:text-4xl font-bold text-[var(--color-ink)] leading-none"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         {value}

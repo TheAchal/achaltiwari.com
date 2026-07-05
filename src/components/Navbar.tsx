@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[var(--color-beige)]/70 backdrop-blur-md border-b border-[var(--color-beige-dark)]/60">
-      <div className="w-full max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-24 py-4 flex items-center justify-between">
+      <div className="w-full max-w-[1728px] mx-auto px-5 sm:px-8 lg:px-12 py-4 flex items-center justify-between">
         <Link
           href="/"
           className="font-bold text-[var(--color-ink)] hover:text-[var(--color-achal)] transition-colors"
@@ -50,17 +50,20 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="flex items-center gap-2.5 text-sm text-[var(--color-muted)]">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[var(--color-ink)] transition-colors"
-              >
-                {s.label}
-              </a>
+          <div className="flex items-center gap-2 text-sm text-[var(--color-muted)]">
+            <span className="text-[var(--color-ink)] mr-1">Socials</span>
+            {socials.map((s, i) => (
+              <span key={s.label} className="flex items-center gap-2">
+                {i > 0 && <span className="opacity-40">/</span>}
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="uppercase hover:text-[var(--color-ink)] transition-colors"
+                >
+                  {s.label}
+                </a>
+              </span>
             ))}
           </div>
           <Link

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-// TODO(Achal): confirm/replace with the email you want recruiters to use.
-const EMAIL = "achaltiwari9450@gmail.com";
+const EMAIL = "product@i3w.ai";
 const LINKEDIN = "https://www.linkedin.com/in/achaltiwari/";
 
 export const metadata: Metadata = {

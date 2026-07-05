@@ -1,110 +1,111 @@
 import Link from "next/link";
-import Image from "next/image";
+import HeroImmersive from "@/components/HeroImmersive";
+
+// Crossing-marquee service words (two bands)
+const svcA = [
+  "Product Strategy",
+  "0→1 Building",
+  "AI Products",
+  "Growth",
+  "Roadmapping",
+  "Go-to-Market",
+];
+const svcB = [
+  "PRDs & Specs",
+  "User Research",
+  "Monetization",
+  "Analytics",
+  "Prioritization",
+  "Beta Strategy",
+];
+
+function MarqTrack({ words, rev }: { words: string[]; rev?: boolean }) {
+  return (
+    <div className={`marq-track${rev ? " marq-track--rev" : ""}`}>
+      {[...words, ...words].map((w, i) => (
+        <span key={i} className="marq-item">
+          {w}
+          <span className="marq-star">✳</span>
+        </span>
+      ))}
+    </div>
+  );
+}
 
 const projects = [
   {
     n: "01",
     title: "InfiNotes",
     href: "/case-studies/infinotes",
-    year: "2026",
-    role: "PM & Builder",
-    desc: "AI study-notes platform. 10,000+ users, 12.9% free-to-paid, profitable in five weeks.",
+    roles: ["Product", "Growth", "0→1"],
+    metric: "10K+ users · 12.9% free→paid",
+    desc: "AI study-notes platform. 10,000+ users, 12.9% free-to-paid, profitable in five weeks — on zero marketing spend.",
   },
   {
     n: "02",
     title: "Project X",
     href: "/case-studies/project-x",
-    year: "2026",
-    role: "PM & Builder",
-    desc: "Text-first AI study companion. Hinglish, priced off a token economy modelled from real model cost.",
+    roles: ["Product", "AI", "Monetization"],
+    metric: "Text-first AI study companion",
+    desc: "AI study companion. Hinglish, peer-toned, priced off a token economy modelled from real model cost.",
   },
   {
     n: "03",
     title: "NestPrep",
     href: "/case-studies/nestprep",
-    year: "2026",
-    role: "PM & Builder",
-    desc: "Science-prep platform, built 0→1: live CBT engine, auth, checkout, honest results page.",
+    roles: ["Product", "0→1", "Full-stack"],
+    metric: "Live CBT engine · built 0→1",
+    desc: "Science-prep platform built 0→1: live CBT engine, auth, checkout, and an honest results page.",
   },
 ];
 
-const stats = [
-  { v: "10K+", l: "Users · InfiNotes" },
-  { v: "12.9%", l: "Free → paid" },
-  { v: "5 wks", l: "To profit" },
-  { v: "6+", l: "Products shipped & live" },
+// Placeholder slots — replace with the real LinkedIn recommendations you paste in.
+const testimonials = [
+  {
+    quote: "Add a real recommendation here — a line or two from a manager or teammate.",
+    name: "Name",
+    role: "Title · Company",
+  },
+  {
+    quote: "Second recommendation slot. Keep the strongest, most specific quotes.",
+    name: "Name",
+    role: "Title · Company",
+  },
+  {
+    quote: "Third recommendation slot — ideally someone who saw you ship end-to-end.",
+    name: "Name",
+    role: "Title · Company",
+  },
 ];
 
 export default function Home() {
   return (
     <div className="-mt-6">
-      {/* Hero */}
-      <section className="min-h-[86vh] flex flex-col justify-center py-10">
-        <p className="eyebrow mb-6">Hi there — this is</p>
-        <h1
-          className="display upper text-[var(--color-ink)]"
-          style={{ fontSize: "clamp(3.2rem, 13vw, 10rem)" }}
-        >
-          Achal
-          <br />
-          Tiwari
-        </h1>
-
-        <div className="mt-12 grid md:grid-cols-[1fr_auto] gap-10 items-end">
-          <div>
-            <p className="text-xl sm:text-2xl text-[var(--color-muted)] max-w-lg leading-snug">
-              Product Manager. I take ideas{" "}
-              <span className="text-[var(--color-ink)]">0→1</span> and ship real
-              AI products — fast, by directing AI, not just writing specs.
-            </p>
-            <div className="mt-8 flex gap-3 flex-wrap">
-              <Link
-                href="/contact"
-                className="px-6 py-3 bg-[var(--color-achal)] text-[#0a0a0b] rounded-full hover:bg-[var(--color-achal-dark)] transition-colors font-medium"
-              >
-                How can I help?
-              </Link>
-              <Link
-                href="/case-studies"
-                className="px-6 py-3 border border-[var(--color-beige-dark)] rounded-full hover:border-[var(--color-ink)] transition-colors font-medium"
-              >
-                See the work
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative w-[220px] sm:w-[300px] aspect-[4/5] justify-self-start md:justify-self-end">
-            <div className="glow-orange" />
-            <Image
-              src="/images/achal-profile.jpeg"
-              alt="Achal Tiwari"
-              fill
-              sizes="(max-width: 768px) 220px, 300px"
-              className="relative z-10 object-cover rounded-2xl"
-              priority
-            />
-          </div>
-        </div>
-
-        <div className="mt-16 flex items-center gap-3">
-          <span className="eyebrow">scroll</span>
-          <span className="h-px w-16 bg-[var(--color-beige-dark)]" />
-        </div>
-      </section>
+      <HeroImmersive />
 
       {/* Intro statement */}
-      <section className="py-20 reveal">
+      <section id="intro" className="py-24 scroll-mt-24">
         <p className="text-3xl sm:text-5xl font-semibold leading-[1.12] max-w-4xl tracking-tight text-[var(--color-ink)]">
           I turn ideas into{" "}
-          <span className="text-[var(--color-achal)]">live products</span>. From a
-          profitable study platform with 10,000+ users to AI companions and 0→1
-          builds — I ship real AI products across domains, fast.
+          <span className="text-[var(--color-achal)]">live products</span> — a
+          profitable study platform with 10,000+ users, AI companions, and 0→1
+          builds shipped across domains.
         </p>
       </section>
 
-      {/* Selected work */}
-      <section className="py-10">
-        <div className="flex items-baseline justify-between mb-8">
+      {/* Crossing services marquee */}
+      <section className="marquee-x" aria-hidden="true">
+        <div className="marq-band marq-band--black">
+          <MarqTrack words={svcA} />
+        </div>
+        <div className="marq-band marq-band--orange">
+          <MarqTrack words={svcB} rev />
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section id="work" className="work scroll-mt-24">
+        <div className="work__head">
           <h2 className="eyebrow">Selected work</h2>
           <Link
             href="/case-studies"
@@ -114,51 +115,51 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="border-b border-[var(--color-beige-dark)]">
-          {projects.map((p) => (
-            <Link
-              key={p.n}
-              href={p.href}
-              className="group block border-t border-[var(--color-beige-dark)] py-8"
-            >
-              <div className="grid md:grid-cols-[auto_1fr_auto] gap-4 md:gap-8 md:items-center">
-                <span className="font-mono text-sm text-[var(--color-muted)] pt-2">
-                  {p.n}
-                </span>
-                <div>
-                  <h3
-                    className="display upper leading-[0.95] text-[var(--color-ink)] group-hover:text-[var(--color-achal)] transition-colors"
-                    style={{ fontSize: "clamp(2rem, 7vw, 4.5rem)" }}
-                  >
-                    {p.title}
-                  </h3>
-                  <p className="mt-3 text-[var(--color-muted)] max-w-xl">
-                    {p.desc}
-                  </p>
-                </div>
-                <div className="text-left md:text-right text-sm font-mono text-[var(--color-muted)] whitespace-nowrap">
-                  <div>{p.year}</div>
-                  <div>{p.role}</div>
-                </div>
+        {projects.map((p, i) => (
+          <Link key={p.n} href={p.href} className="work__item group">
+            <div className={`work__cover work__cover--${i + 1}`}>
+              <span className="work__cover-title">{p.title}</span>
+              <span className="work__cover-metric">{p.metric}</span>
+            </div>
+            <div className="work__info">
+              <span className="work__num">{p.n}</span>
+              <h3 className="work__name">{p.title}</h3>
+              <div className="work__roles">
+                {p.roles.map((r) => (
+                  <span key={r} className="work__role">
+                    {r}
+                  </span>
+                ))}
               </div>
-            </Link>
-          ))}
-        </div>
+              <p className="work__desc">{p.desc}</p>
+              <span className="work__cta">
+                View case study <span aria-hidden>↗</span>
+              </span>
+            </div>
+          </Link>
+        ))}
       </section>
 
-      {/* Numbers */}
-      <section className="py-20">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {stats.map((s) => (
-            <div key={s.l} className="reveal">
-              <div
-                className="display text-[var(--color-ink)]"
-                style={{ fontSize: "clamp(2.5rem, 6vw, 3.75rem)" }}
-              >
-                {s.v}
-              </div>
-              <div className="mt-2 text-sm text-[var(--color-muted)]">{s.l}</div>
-            </div>
+      {/* Testimonials */}
+      <section className="testi">
+        <div className="work__head">
+          <h2 className="eyebrow">What people say</h2>
+          <span className="eyebrow opacity-60">Recommendations</span>
+        </div>
+        <div className="testi__grid">
+          {testimonials.map((t, i) => (
+            <figure key={i} className="testi__card">
+              <blockquote className="testi__quote">“{t.quote}”</blockquote>
+              <figcaption className="testi__by">
+                <span className="testi__avatar" aria-hidden>
+                  {t.name.charAt(0)}
+                </span>
+                <span>
+                  <span className="testi__name">{t.name}</span>
+                  <span className="testi__role">{t.role}</span>
+                </span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>

@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 import "@/styles/globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -97,13 +98,14 @@ export default function RootLayout({
       className={`${hanken.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <SmoothScroll />
         <div className="aurora" aria-hidden="true" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        <main className="flex-1 w-full max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-24 py-12">
+        <main className="flex-1 w-full max-w-[1728px] mx-auto px-5 sm:px-8 lg:px-12 py-10">
           {children}
         </main>
         <Footer />

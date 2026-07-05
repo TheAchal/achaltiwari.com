@@ -1,0 +1,33 @@
+"use client";
+
+import { useEffect } from "react";
+import Lenis from "lenis";
+
+// Inertial smooth scrolling (the "feel" of the reference site, which uses Lenis).
+// Lenis drives native scroll position — so position: sticky / fixed keep working.
+export default function SmoothScroll() {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const lenis = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      touchMultiplier: 1.4,
+    });
+
+    let raf = 0;
+    const loop = (time: number) => {
+      lenis.raf(time);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis.destroy();
+    };
+  }, []);
+
+  return null;
+}
