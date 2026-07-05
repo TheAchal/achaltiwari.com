@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
       </Link>
 
-      <div className="w-full max-w-[1680px] mx-auto px-6 sm:px-10 lg:px-16 py-16">
+      <div className="w-full max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-24 py-16">
         <p className="eyebrow mb-4">Have something in mind?</p>
         <Link
           href="/contact"

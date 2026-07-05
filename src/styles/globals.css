@@ -2,25 +2,25 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Warm editorial dark base */
-  --color-beige: #0a0a0b;        /* page background — warm near-black */
-  --color-beige-dark: #26241f;   /* hairlines & borders (warm) */
-  --color-ink: #f0ede4;          /* cream primary text */
-  --color-muted: #8f8b80;        /* warm muted */
-  --color-card: #131311;         /* panels */
+  /* Exact palette from valentincheval.design */
+  --color-beige: #0c0d10;        /* page background — cool near-black */
+  --color-beige-dark: #26272b;   /* hairlines & borders (~white .1) */
+  --color-ink: #ffffff;          /* titles — pure white */
+  --color-muted: #8a8b8f;        /* body text (~white .5) */
+  --color-card: #16171b;         /* panels */
 
-  /* Warm orange accent */
-  --color-achal: #ff6a2b;
-  --color-achal-dark: #e0561f;
-  --color-achal-light: #1f1206;
+  /* Accent — their #ff3d00 red-orange */
+  --color-achal: #ff3d00;
+  --color-achal-dark: #e03600;
+  --color-achal-light: #1f0d06;
 
-  /* Neutral secondary */
-  --color-claude: #c9c4b6;
-  --color-claude-dark: #97928a;
-  --color-claude-light: #16150f;
+  /* Secondary greys (subtitle / description) */
+  --color-claude: #b9bbc0;
+  --color-claude-dark: #8a8b8f;
+  --color-claude-light: #141519;
 
   --color-success: #7bd08a;
-  --color-highlight: #241706;
+  --color-highlight: #1f0d06;
 
   --font-heading: "Hanken Grotesk", system-ui, sans-serif;
   --font-body: "Hanken Grotesk", system-ui, sans-serif;
@@ -30,10 +30,9 @@
 body {
   font-family: var(--font-heading);
   background-color: var(--color-beige);
-  color: var(--color-ink);
+  color: var(--color-muted);
   background-image:
-    radial-gradient(48% 38% at 50% 0%, rgba(255, 106, 43, 0.1), transparent 70%),
-    radial-gradient(38% 30% at 88% 10%, rgba(255, 106, 43, 0.06), transparent 72%);
+    radial-gradient(55% 40% at 50% -6%, rgba(255, 61, 0, 0.1), transparent 62%);
   background-attachment: fixed;
 }
 
@@ -44,6 +43,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
+  color: var(--color-ink);
 }
 
 /* Editorial eyebrow — mono, uppercase, wide tracking */
@@ -181,8 +181,8 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   background: radial-gradient(
     closest-side,
-    rgba(255, 106, 43, 0.55),
-    rgba(255, 106, 43, 0.14) 58%,
+    rgba(255, 61, 0, 0.55),
+    rgba(255, 61, 0, 0.14) 58%,
     transparent 76%
   );
   filter: blur(38px);

@@ -102,7 +102,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        <main className="flex-1 w-full max-w-[1680px] mx-auto px-6 sm:px-10 lg:px-16 py-12">
+        <main className="flex-1 w-full max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-24 py-12">
           {children}
         </main>
         <Footer />

@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Intro statement */}
       <section className="py-20 reveal">
-        <p className="text-3xl sm:text-5xl font-semibold leading-[1.12] max-w-4xl tracking-tight">
+        <p className="text-3xl sm:text-5xl font-semibold leading-[1.12] max-w-4xl tracking-tight text-[var(--color-ink)]">
           I turn ideas into{" "}
           <span className="text-[var(--color-achal)]">live products</span>. From a
           profitable study platform with 10,000+ users to AI companions and 0→1

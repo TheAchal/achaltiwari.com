@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[var(--color-beige)]/70 backdrop-blur-md border-b border-[var(--color-beige-dark)]/60">
-      <div className="w-full max-w-[1680px] mx-auto px-6 sm:px-10 lg:px-16 py-4 flex items-center justify-between">
+      <div className="w-full max-w-[1728px] mx-auto px-6 sm:px-10 lg:px-24 py-4 flex items-center justify-between">
         <Link
           href="/"
           className="font-bold text-[var(--color-ink)] hover:text-[var(--color-achal)] transition-colors"
