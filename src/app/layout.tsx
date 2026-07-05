@@ -97,6 +97,7 @@ export default function RootLayout({
       className={`${hanken.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <div className="aurora" aria-hidden="true" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

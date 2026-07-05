@@ -31,13 +31,59 @@ body {
   font-family: var(--font-heading);
   background-color: var(--color-beige);
   color: var(--color-muted);
-  background-image:
-    radial-gradient(55% 40% at 50% -6%, rgba(255, 61, 0, 0.1), transparent 62%);
-  background-attachment: fixed;
+  position: relative;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Ambient animated orange aurora — sits behind all content */
+.aurora {
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  right: -10%;
+  height: 78vh;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 60% at 30% 25%, rgba(255, 61, 0, 0.18), transparent 60%),
+    radial-gradient(45% 50% at 75% 12%, rgba(255, 61, 0, 0.1), transparent 62%);
+  filter: blur(52px);
+  animation: auroraDrift 18s ease-in-out infinite alternate;
+}
+@keyframes auroraDrift {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(4%, 3%, 0) scale(1.14);
+    opacity: 1;
+  }
+}
+
+/* Film grain over the whole frame */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -24px;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: grain 0.5s steps(2) infinite;
+}
+@keyframes grain {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-8px, 5px);
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -239,7 +285,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee__track {
+  .marquee__track,
+  .aurora,
+  body::after {
     animation: none;
   }
   html {
