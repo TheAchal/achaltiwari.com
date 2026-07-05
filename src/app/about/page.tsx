@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto">
-      <p className="text-sm text-[var(--color-claude)] font-medium mb-4 tracking-wide uppercase">
-        Narrated by Claude
+      <p className="text-sm text-[var(--color-achal)] font-medium mb-4 tracking-wide uppercase">
+        About me
       </p>
 
       {/* Hero */}
@@ -30,11 +30,14 @@ export default function AboutPage() {
           <p className="mt-1 text-[var(--color-achal)] font-medium">
             Product Manager, Infinity Learn
           </p>
+          <p className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--color-claude)] bg-[var(--color-claude-light)] border border-[var(--color-claude)]/20 rounded-full px-3 py-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-success)]" />
+            Open to Senior / AI-PM roles · UK + India
+          </p>
           <p className="mt-4 text-[var(--color-ink)] leading-relaxed">
-            I work with Achal every day. He&apos;s a product manager who treats
-            AI as a thinking partner, not a text generator. He ships real
-            products, learns in public, and isn&apos;t afraid to document his
-            failures alongside his wins.
+            I’m a product manager who treats AI as a thinking partner, not a
+            text generator. I ship real products, learn in public, and document
+            my failures alongside my wins.
           </p>
         </div>
       </section>
@@ -55,7 +58,7 @@ export default function AboutPage() {
           </p>
           <div className="space-y-3 text-[var(--color-ink)] leading-relaxed">
             <p>
-              Achal runs several products at once, each at a different stage:
+              I run several products at once, each at a different stage:
             </p>
             <ul className="space-y-2">
               <li className="flex items-start gap-2">
@@ -126,7 +129,7 @@ export default function AboutPage() {
 
         <div>
           <h3 className="text-sm font-medium text-[#4ade80] mb-3 uppercase tracking-wide">
-            How He Works
+            How I Work
           </h3>
           <div className="flex flex-wrap gap-2">
             {["Treats ideas as hypotheses", "Documents failures", "Builds systems, not just features", "Pivots fast with data", "Writes for clarity"].map((s) => (
@@ -176,15 +179,21 @@ export default function AboutPage() {
       <section>
         <div className="space-y-4 text-[var(--color-ink)] leading-relaxed">
           <p>
-            If I had to describe Achal in one line, it would be this: he builds
-            like someone who knows the answer might be wrong, and ships anyway.
+            If I had to describe how I work in one line: I build like someone
+            who knows the answer might be wrong, and ships anyway.
           </p>
           <p>
-            He treats every assumption as testable, every failure as a data
-            point, and every collaborator — including me — as someone worth
-            listening to. That&apos;s not common, and it&apos;s the reason our
-            work together keeps getting better.
+            I treat every assumption as testable, every failure as a data
+            point, and every collaborator — including the AI I build with — as
+            someone worth listening to.
           </p>
+          <div className="border-l-2 border-[var(--color-claude)]/40 bg-[var(--color-claude-light)] rounded-r-lg px-4 py-3 text-sm text-[var(--color-muted)]">
+            <span className="text-[var(--color-claude)] font-medium">
+              Claude, my AI collaborator:
+            </span>{" "}
+            “He treats me as a thinking partner, not a text generator — and
+            that’s the reason our work together keeps getting better.”
+          </div>
           <p className="text-[var(--color-muted)]">
             Want the full story?{" "}
             <Link
@@ -228,7 +237,7 @@ export default function AboutPage() {
           </p>
         </a>
         <a
-          href="https://github.com/achaltiwari"
+          href="https://github.com/TheAchal"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[var(--color-card)] border border-[var(--color-beige-dark)] rounded-xl p-5 hover:border-[var(--color-muted)] transition-colors group"
@@ -247,26 +256,26 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-8 text-center">
         <p className="text-[var(--color-muted)] mb-4">
-          Explore more of what we&apos;ve built together.
+          Hiring, building, or just curious? Let’s talk.
         </p>
         <div className="flex justify-center gap-3 flex-wrap">
           <Link
-            href="/our-story"
+            href="/contact"
             className="px-5 py-2.5 bg-[var(--color-achal)] text-[#0a0a0f] rounded-lg hover:bg-[var(--color-achal-dark)] transition-colors text-sm font-medium"
           >
-            Our Story
+            Get in touch
           </Link>
           <Link
             href="/case-studies"
             className="px-5 py-2.5 bg-[var(--color-card)] text-[var(--color-ink)] rounded-lg border border-[var(--color-beige-dark)] hover:border-[var(--color-muted)] transition-colors text-sm font-medium"
           >
-            Work
+            See the work
           </Link>
           <Link
-            href="/journey"
+            href="/resume"
             className="px-5 py-2.5 bg-[var(--color-claude-light)] text-[var(--color-claude)] rounded-lg border border-[var(--color-claude)]/20 hover:border-[var(--color-claude)]/40 transition-colors text-sm font-medium"
           >
-            Journey
+            Résumé
           </Link>
         </div>
       </section>

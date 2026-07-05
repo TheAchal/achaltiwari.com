@@ -3,9 +3,7 @@ export default function Divider({ label }: { label?: string }) {
     return (
       <div className="flex items-center gap-4 my-16">
         <div className="flex-1 h-px bg-[var(--color-beige-dark)]" />
-        <span className="text-xs text-[var(--color-muted)] uppercase tracking-widest">
-          {label}
-        </span>
+        <span className="eyebrow whitespace-nowrap">{label}</span>
         <div className="flex-1 h-px bg-[var(--color-beige-dark)]" />
       </div>
     );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getContentBySlug, getContentSlugs } from "@/lib/mdx";
 import MDXContent from "@/components/MDXContent";
+import ContactCTA from "@/components/ContactCTA";
 import Tag from "@/components/Tag";
 import Link from "next/link";
 
@@ -29,7 +30,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto">
       <Link
         href="/case-studies"
-        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-terracotta)] transition-colors"
+        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-achal)] transition-colors"
       >
         &larr; All case studies
       </Link>
@@ -51,6 +52,8 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <div className="mt-10">
         <MDXContent source={content} />
       </div>
+
+      <ContactCTA />
     </div>
   );
 }

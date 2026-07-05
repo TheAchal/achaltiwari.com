@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Merriweather, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
-const merriweather = Merriweather({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["500", "700"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -17,28 +19,77 @@ const inter = Inter({
   display: "swap",
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
+const SITE_URL = "https://achaltiwari.com";
+const TITLE = "Achal Tiwari — AI Product Manager & 0→1 Builder";
+const DESCRIPTION =
+  "I take ideas 0→1 and ship real AI products, fast — by directing AI, not just writing specs. Product Manager at Infinity Learn. 10K+ users, profitable in five weeks, multiple live products across domains. Open to Senior / AI-PM roles (UK + India).";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Achal Tiwari + Claude — A PM Growing with AI",
-    template: "%s | Achal + Claude",
+    default: TITLE,
+    template: "%s · Achal Tiwari",
   },
-  description:
-    "The story of a Product Manager and an AI learning to think together. Real products, real struggles, real collaboration — narrated by Claude.",
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Achal Tiwari + Claude — A PM Growing with AI",
-    description:
-      "The story of a Product Manager and an AI learning to think together. Real products, real struggles, real collaboration — narrated by Claude.",
-    url: "https://achaltiwari.com",
-    siteName: "Achal + Claude",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Achal Tiwari",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Achal Tiwari + Claude — A PM Growing with AI",
-    description:
-      "The story of a Product Manager and an AI learning to think together. Real products, real struggles, real collaboration — narrated by Claude.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#achal`,
+      name: "Achal Tiwari",
+      url: SITE_URL,
+      jobTitle: "Product Manager",
+      worksFor: { "@type": "Organization", name: "Infinity Learn" },
+      alumniOf: [
+        "BITS Pilani",
+        "Dr. A.P.J. Abdul Kalam Technical University",
+      ],
+      knowsAbout: [
+        "AI product management",
+        "LLM and agent products",
+        "0-to-1 product development",
+        "Growth",
+        "Product strategy",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/achaltiwari/",
+        "https://github.com/TheAchal",
+        "https://x.com/AchalTiwari_",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Achal Tiwari",
+      description: DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#achal` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -47,13 +98,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${merriweather.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-12">
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

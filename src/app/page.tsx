@@ -4,107 +4,98 @@ import MetricCard from "@/components/MetricCard";
 import Divider from "@/components/Divider";
 import PullQuote from "@/components/PullQuote";
 import { getAllContent } from "@/lib/mdx";
-import { CaseStudyMeta, BlogPostMeta } from "@/lib/types";
+import { BlogPostMeta } from "@/lib/types";
 import ContentCard from "@/components/ContentCard";
+import ContactCTA from "@/components/ContactCTA";
+import Hero3D from "@/components/Hero3D";
 
 export default function Home() {
-  const caseStudies = getAllContent<CaseStudyMeta>("case-studies");
   const blogPosts = getAllContent<BlogPostMeta>("blog");
 
   return (
     <div>
-      {/* Hero — Claude's opening */}
-      <section className="py-8 sm:py-16">
-        <p className="text-sm text-[var(--color-claude)] font-medium mb-6 tracking-wide uppercase">
-          A note from Claude
-        </p>
-        <h1
-          className="text-3xl sm:text-5xl font-bold leading-tight"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Let me tell you about
-          <br />
-          <span className="text-[var(--color-achal)]">Achal Tiwari.</span>
-        </h1>
-        <p className="mt-6 text-lg text-[var(--color-muted)] max-w-2xl leading-relaxed">
-          He didn&apos;t come to me with a simple request. The first time Achal
-          messaged me, he asked me to help him <em>think</em>. That was
-          different. And it changed both of us.
-        </p>
-        <div className="mt-8 flex gap-3">
+      {/* Hero */}
+      <section className="pt-4 pb-14 sm:pt-8 sm:pb-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-4 items-center">
+          {/* Copy */}
+          <div className="order-2 md:order-1">
+            <p className="eyebrow mb-6">
+              Product Manager · builds 0→1 · directs AI
+            </p>
+            <h1 className="text-5xl sm:text-6xl font-bold leading-[0.95]">
+              <span className="chrome-text">Ideas</span>
+              <br />
+              <span className="chrome-text">to live products.</span>
+              <br />
+              <span className="text-[var(--color-achal)]">Fast.</span>
+            </h1>
+            <p className="mt-7 text-lg text-[var(--color-muted)] max-w-md leading-relaxed">
+              I’m Achal Tiwari — a PM who builds. I ship real 0→1 AI products
+              across edtech, consumer, and beyond, by directing AI instead of
+              just writing specs.
+            </p>
+            <div className="mt-6 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[var(--color-claude)] bg-[var(--color-claude-light)] border border-[var(--color-claude)]/20 rounded-full px-3 py-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-success)]" />
+              Open to Senior / AI-PM roles · UK + India
+            </div>
+            <div className="mt-8 flex gap-3 flex-wrap">
+              <Link
+                href="/case-studies"
+                className="inline-block px-5 py-2.5 bg-[var(--color-achal)] text-[#08080b] rounded-md hover:bg-[var(--color-achal-dark)] transition-colors text-sm font-medium"
+              >
+                See the work
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-block px-5 py-2.5 bg-transparent text-[var(--color-ink)] rounded-md border border-[var(--color-beige-dark)] hover:border-[var(--color-claude)] transition-colors text-sm font-medium"
+              >
+                Get in touch
+              </Link>
+            </div>
+          </div>
+
+          {/* 3D monogram */}
+          <div className="order-1 md:order-2">
+            <Hero3D />
+          </div>
+        </div>
+
+        <p className="mt-12 text-sm text-[var(--color-muted)] max-w-2xl leading-relaxed">
+          I built and co-wrote this entire site — copy, code, the 3D, and the
+          design — by directing Claude. That’s the skill I’m selling. Every
+          number here is real and mine.{" "}
           <Link
             href="/our-story"
-            className="inline-block px-5 py-2.5 bg-[var(--color-achal)] text-[#0a0a0f] rounded-lg hover:bg-[var(--color-achal-dark)] transition-colors text-sm font-medium"
+            className="text-[var(--color-claude)] hover:underline"
           >
-            Read our story
+            Read the story &rarr;
           </Link>
-          <Link
-            href="/journey"
-            className="inline-block px-5 py-2.5 bg-[var(--color-card)] text-[var(--color-ink)] rounded-lg border border-[var(--color-beige-dark)] hover:border-[var(--color-muted)] transition-colors text-sm font-medium"
-          >
-            See the journey
-          </Link>
-        </div>
+        </p>
       </section>
 
-      {/* Metrics — visual strip */}
+      {/* Metrics */}
       <section className="py-6">
+        <p className="eyebrow mb-5">What that looks like in numbers</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <MetricCard value="10K+" label="Users" sublabel="InfiNotes" />
-          <MetricCard value="12.9%" label="Conversion" sublabel="Free to paid" />
-          <MetricCard value="3" label="Products" sublabel="Shipped & building" />
+          <MetricCard value="10K+" label="Users" sublabel="InfiNotes, organic" />
+          <MetricCard value="12.9%" label="Free → paid" sublabel="conversion" />
+          <MetricCard value="6+" label="Products" sublabel="shipped & live" />
           <MetricCard value="5 wks" label="To profit" sublabel="InfiNotes" />
         </div>
       </section>
 
-      <Divider label="Our first exchange" />
+      <Divider label="Selected work" />
 
-      {/* Chat exchange — compact */}
-      <section className="py-4">
-        <ChatBubble speaker="achal">
-          I need help thinking through user flows for a new product. I don&apos;t
-          want you to just give me answers. I want you to help me think clearly.
-        </ChatBubble>
-        <ChatBubble speaker="claude">
-          Before I suggest anything — who is this really for, the student or the
-          parent? What happens in the first 30 seconds? And what does
-          &quot;success&quot; look like for a single study session?
-        </ChatBubble>
-        <p className="text-center text-sm text-[var(--color-muted)] mt-6">
-          January 2026. We haven&apos;t stopped since.
-        </p>
-      </section>
-
-      <Divider label="What we built" />
-
-      {/* InfiNotes — Text showcase */}
-      <section className="py-8">
-        <div className="bg-[var(--color-card)] rounded-xl border border-[var(--color-beige-dark)] p-8">
-          <h2
-            className="text-2xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            InfiNotes
-          </h2>
-          <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-            AI-powered study notes for 10,000+ students. Real revenue. Real
-            conversion. Built on 20% of team bandwidth while shipping something
-            else entirely.
+      {/* Product showcases */}
+      <section className="py-6 grid sm:grid-cols-2 gap-4">
+        <div className="bg-[var(--color-card)] rounded-lg border border-[var(--color-beige-dark)] p-7 hover:border-[var(--color-achal)]/40 transition-colors">
+          <p className="eyebrow mb-3">Live · owner</p>
+          <h2 className="text-2xl font-bold mb-3">InfiNotes</h2>
+          <p className="text-[var(--color-muted)] leading-relaxed mb-5 text-sm">
+            AI study-notes platform. 10,000+ users, 12.9% free-to-paid,
+            profitable in five weeks — built on 20% team bandwidth while shipping
+            something else entirely.
           </p>
-          <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">10K+</div>
-              <div className="text-xs text-[var(--color-muted)]">Users</div>
-            </div>
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">12.9%</div>
-              <div className="text-xs text-[var(--color-muted)]">Conversion</div>
-            </div>
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">Profitable</div>
-              <div className="text-xs text-[var(--color-muted)]">in 5 weeks</div>
-            </div>
-          </div>
           <Link
             href="/case-studies/infinotes"
             className="text-sm text-[var(--color-achal)] hover:text-[var(--color-achal-dark)] transition-colors font-medium"
@@ -112,45 +103,18 @@ export default function Home() {
             Read the case study &rarr;
           </Link>
         </div>
-      </section>
 
-      <Divider label="Project X" />
-
-      {/* Project X — teaser */}
-      <section className="py-8">
-        <div className="bg-[var(--color-card)] rounded-xl border border-[var(--color-beige-dark)] p-8">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2 h-2 rounded-full bg-[var(--color-achal)] animate-pulse" />
-            <span className="text-xs text-[var(--color-achal)] font-medium uppercase tracking-wider">
-              Shipping when it&apos;s ready
-            </span>
+        <div className="bg-[var(--color-card)] rounded-lg border border-[var(--color-beige-dark)] p-7 hover:border-[var(--color-achal)]/40 transition-colors">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-achal)] animate-pulse" />
+            <p className="eyebrow">In market prep · owner</p>
           </div>
-          <h2
-            className="text-2xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Project X
-          </h2>
-          <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-            An AI study companion for Indian students — text-first, Hinglish, and
-            built to feel less like a tutor and more like the friend you message
-            after school. It stopped chasing a launch date and started shipping
-            on readiness instead.
+          <h2 className="text-2xl font-bold mb-3">Project X</h2>
+          <p className="text-[var(--color-muted)] leading-relaxed mb-5 text-sm">
+            A text-first AI companion for students — Hinglish, peer-toned, priced
+            off a token economy I modelled from real per-model cost. Shipping on
+            readiness, not a calendar.
           </p>
-          <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">Text-first</div>
-              <div className="text-xs text-[var(--color-muted)]">voice as upgrade</div>
-            </div>
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">Hinglish</div>
-              <div className="text-xs text-[var(--color-muted)]">after-school peer</div>
-            </div>
-            <div className="text-center py-3 rounded-lg bg-[var(--color-beige)]/50 border border-[var(--color-beige-dark)]">
-              <div className="text-xl font-bold text-[var(--color-achal)]">Class 6–12</div>
-              <div className="text-xs text-[var(--color-muted)]">Indian students</div>
-            </div>
-          </div>
           <Link
             href="/case-studies/project-x"
             className="text-sm text-[var(--color-achal)] hover:text-[var(--color-achal-dark)] transition-colors font-medium"
@@ -160,18 +124,31 @@ export default function Home() {
         </div>
       </section>
 
-      <Divider label="How we work" />
+      <Divider label="How I work with AI" />
+
+      {/* Chat exchange */}
+      <section className="py-4">
+        <ChatBubble speaker="achal">
+          I need help thinking through user flows for a new product. I don&apos;t
+          want you to just give me answers. I want you to help me think clearly.
+        </ChatBubble>
+        <ChatBubble speaker="claude">
+          Before I suggest anything — who is this really for, the student or the
+          parent? What happens in the first 30 seconds? And what does
+          &quot;success&quot; look like for a single session?
+        </ChatBubble>
+        <p className="text-center text-sm text-[var(--color-muted)] mt-6">
+          January 2026. We haven&apos;t stopped since.
+        </p>
+      </section>
+
+      <Divider label="Go deeper" />
 
       {/* Explore cards */}
-      <section className="py-8">
+      <section className="py-6">
         <div className="grid sm:grid-cols-3 gap-4">
           <Link href="/our-story" className="group">
-            <div className="bg-[var(--color-card)] rounded-xl p-5 shadow-sm hover:shadow-md transition-all border border-[var(--color-beige-dark)] hover:border-[var(--color-claude)]/30 h-full">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-claude-light)] border border-[var(--color-claude)]/20 flex items-center justify-center mb-3">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--color-claude)" strokeWidth="1.5">
-                  <path d="M2 4h12M2 8h8M2 12h10" />
-                </svg>
-              </div>
+            <div className="bg-[var(--color-card)] rounded-lg p-5 border border-[var(--color-beige-dark)] hover:border-[var(--color-claude)]/40 transition-colors h-full">
               <h3 className="font-semibold group-hover:text-[var(--color-achal)] transition-colors">
                 Our Story
               </h3>
@@ -181,12 +158,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/prompts" className="group">
-            <div className="bg-[var(--color-card)] rounded-xl p-5 shadow-sm hover:shadow-md transition-all border border-[var(--color-beige-dark)] hover:border-[var(--color-achal)]/30 h-full">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-achal-light)] border border-[var(--color-achal)]/20 flex items-center justify-center mb-3">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--color-achal)" strokeWidth="1.5">
-                  <path d="M4 12l4-4 4 4M4 8l4-4 4 4" />
-                </svg>
-              </div>
+            <div className="bg-[var(--color-card)] rounded-lg p-5 border border-[var(--color-beige-dark)] hover:border-[var(--color-achal)]/40 transition-colors h-full">
               <h3 className="font-semibold group-hover:text-[var(--color-achal)] transition-colors">
                 Prompt Lab
               </h3>
@@ -196,12 +168,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/blog" className="group">
-            <div className="bg-[var(--color-card)] rounded-xl p-5 shadow-sm hover:shadow-md transition-all border border-[var(--color-beige-dark)] hover:border-[var(--color-muted)]/30 h-full">
-              <div className="w-8 h-8 rounded-lg bg-[var(--color-beige-dark)] border border-[var(--color-muted)]/20 flex items-center justify-center mb-3">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--color-muted)" strokeWidth="1.5">
-                  <path d="M3 3h10v10H3zM6 6h4M6 9h3" />
-                </svg>
-              </div>
+            <div className="bg-[var(--color-card)] rounded-lg p-5 border border-[var(--color-beige-dark)] hover:border-[var(--color-claude)]/40 transition-colors h-full">
               <h3 className="font-semibold group-hover:text-[var(--color-achal)] transition-colors">
                 Reflections
               </h3>
@@ -216,12 +183,7 @@ export default function Home() {
       {/* Latest reflections */}
       {blogPosts.length > 0 && (
         <section className="py-8">
-          <h2
-            className="text-2xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Latest reflections
-          </h2>
+          <h2 className="text-2xl font-bold mb-6">Latest reflections</h2>
           <div className="space-y-4">
             {blogPosts.slice(0, 2).map((post) => (
               <ContentCard
@@ -238,13 +200,14 @@ export default function Home() {
       )}
 
       {/* Closing */}
-      <section className="py-12">
-        <PullQuote attribution="Claude, about Achal">
-          He&apos;s not the PM who has it all figured out. He&apos;s the PM
-          who&apos;s honest about what he doesn&apos;t know — and then figures
-          it out anyway.
+      <section className="pt-12">
+        <PullQuote attribution="Achal Tiwari">
+          I’m not the PM who has it all figured out. I’m the one who’s honest
+          about what I don’t know — and then figures it out anyway.
         </PullQuote>
       </section>
+
+      <ContactCTA />
     </div>
   );
 }

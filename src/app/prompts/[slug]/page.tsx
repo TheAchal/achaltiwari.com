@@ -29,7 +29,7 @@ export default async function PromptPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto">
       <Link
         href="/prompts"
-        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-terracotta)] transition-colors"
+        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-achal)] transition-colors"
       >
         &larr; All prompts
       </Link>

@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     <div className="max-w-2xl mx-auto">
       <Link
         href="/blog"
-        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-terracotta)] transition-colors"
+        className="text-sm text-[var(--color-muted)] hover:text-[var(--color-achal)] transition-colors"
       >
         &larr; All posts
       </Link>

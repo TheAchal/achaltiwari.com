@@ -2,28 +2,28 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Dark base */
-  --color-beige: #0a0a0f;
-  --color-beige-dark: #16161e;
-  --color-ink: #e8e6e3;
-  --color-muted: #8a8a9a;
-  --color-card: #12121a;
+  /* Chrome-editorial dark base */
+  --color-beige: #08080b;        /* page background — near black */
+  --color-beige-dark: #1b1b22;   /* hairlines & borders */
+  --color-ink: #f3f3f6;          /* primary text */
+  --color-muted: #9a9aa8;        /* secondary text */
+  --color-card: #0e0e13;         /* panels */
 
-  /* Achal's voice — warm amber */
-  --color-achal: #e09145;
-  --color-achal-dark: #c87a30;
-  --color-achal-light: #1f1710;
+  /* The single accent — warm amber */
+  --color-achal: #e8974a;
+  --color-achal-dark: #c8792f;
+  --color-achal-light: #1d1509;
 
-  /* Claude's voice — electric indigo */
-  --color-claude: #818cf8;
-  --color-claude-dark: #6366f1;
-  --color-claude-light: #13132a;
+  /* Second voice, repurposed to chrome steel (keeps mono + 1 accent) */
+  --color-claude: #b8bec9;
+  --color-claude-dark: #8b93a3;
+  --color-claude-light: #14141b;
 
   /* Accents */
-  --color-success: #4ade80;
-  --color-highlight: #2a2416;
+  --color-success: #5fd08a;
+  --color-highlight: #221a0d;
 
-  --font-heading: "Merriweather", Georgia, serif;
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
@@ -32,10 +32,50 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-beige);
   color: var(--color-ink);
+  background-image:
+    radial-gradient(55% 45% at 50% -8%, rgba(232, 151, 74, 0.07), transparent 70%),
+    radial-gradient(40% 40% at 92% 6%, rgba(184, 190, 201, 0.05), transparent 72%);
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Editorial eyebrow — mono, uppercase, wide tracking */
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+}
+
+/* Chromed metallic text for big display headings */
+.chrome-text {
+  background: linear-gradient(
+    174deg,
+    #ffffff 0%,
+    #d7dbe2 42%,
+    #9aa0ab 68%,
+    #eef0f3 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline separators */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-beige-dark) 20%,
+    var(--color-beige-dark) 80%,
+    transparent
+  );
 }
 
 /* Prose overrides for MDX content */
@@ -59,9 +99,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-achal-dark);
 }
 
-/* Smooth page transitions */
-main {
-  animation: fadeIn 0.5s ease-out;
+/* Smooth page transitions — respect reduced-motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  main {
+    animation: fadeIn 0.5s ease-out;
+  }
 }
 
 @keyframes fadeIn {
@@ -75,13 +117,43 @@ main {
   color: var(--color-beige);
 }
 
-/* Scroll-triggered fade in */
-.fade-up {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s ease-out forwards;
+/* Fade-up utility — only hide-then-reveal when motion is allowed, so
+   reduced-motion users always see content immediately */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  .fade-up-delay-1 { animation-delay: 0.1s; }
+  .fade-up-delay-2 { animation-delay: 0.2s; }
+  .fade-up-delay-3 { animation-delay: 0.3s; }
 }
 
-.fade-up-delay-1 { animation-delay: 0.1s; }
-.fade-up-delay-2 { animation-delay: 0.2s; }
-.fade-up-delay-3 { animation-delay: 0.3s; }
+/* Print — clean, light résumé/CV output */
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  main,
+  main * {
+    color: #000 !important;
+    background: transparent !important;
+    border-color: #ddd !important;
+    animation: none !important;
+  }
+  main {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+}

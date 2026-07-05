@@ -6,18 +6,18 @@ interface MetricCardProps {
 
 export default function MetricCard({ value, label, sublabel }: MetricCardProps) {
   return (
-    <div className="bg-[var(--color-card)] rounded-xl p-5 border border-[var(--color-beige-dark)] text-center hover:border-[var(--color-achal)]/30 transition-colors">
+    <div className="bg-[var(--color-card)] rounded-lg p-5 border border-[var(--color-beige-dark)] hover:border-[var(--color-achal)]/30 transition-colors">
       <div
-        className="text-3xl font-bold text-[var(--color-achal)]"
+        className="text-3xl sm:text-4xl font-bold chrome-text leading-none"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         {value}
       </div>
-      <div className="mt-1 text-sm font-medium text-[var(--color-ink)]">
+      <div className="mt-2 text-sm font-medium text-[var(--color-ink)]">
         {label}
       </div>
       {sublabel && (
-        <div className="mt-0.5 text-xs text-[var(--color-muted)]">
+        <div className="mt-1 text-xs text-[var(--color-muted)] font-mono">
           {sublabel}
         </div>
       )}
