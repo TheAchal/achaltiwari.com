@@ -5,102 +5,117 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Index" },
   { href: "/case-studies", label: "Work" },
-  { href: "/journey", label: "Journey" },
-  { href: "/blog", label: "Reflections" },
-  { href: "/prompts", label: "Prompt Lab" },
+  { href: "/about", label: "About" },
   { href: "/resume", label: "Résumé" },
+];
+
+const socials = [
+  { label: "li", href: "https://www.linkedin.com/in/achaltiwari/" },
+  { label: "gh", href: "https://github.com/TheAchal" },
+  { label: "x", href: "https://x.com/AchalTiwari_" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
   const isActive = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(href));
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--color-beige)]/80 backdrop-blur-md border-b border-[var(--color-beige-dark)]">
+    <nav className="sticky top-0 z-50 bg-[var(--color-beige)]/70 backdrop-blur-md border-b border-[var(--color-beige-dark)]/60">
       <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span
-            className="grid place-items-center w-7 h-7 rounded-md border border-[var(--color-beige-dark)] bg-[var(--color-card)] text-sm font-bold chrome-text"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            A
-          </span>
-          <span
-            className="font-bold text-[var(--color-ink)] group-hover:text-[var(--color-achal)] transition-colors"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            Achal Tiwari
-          </span>
+        <Link
+          href="/"
+          className="font-bold text-[var(--color-ink)] hover:text-[var(--color-achal)] transition-colors"
+        >
+          Achal Tiwari
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
-          {links.slice(1).map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`px-3 py-1.5 rounded-md text-xs font-mono uppercase tracking-wider transition-colors ${
-                isActive(link.href)
-                  ? "text-[var(--color-achal)]"
-                  : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-4 text-sm">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className={
+                  isActive(l.href)
+                    ? "text-[var(--color-achal)]"
+                    : "text-[var(--color-muted)] hover:text-[var(--color-ink)] transition-colors"
+                }
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+          <div className="flex items-center gap-2.5 text-sm text-[var(--color-muted)]">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--color-ink)] transition-colors"
+              >
+                {s.label}
+              </a>
+            ))}
+          </div>
           <Link
             href="/contact"
-            className="ml-2 px-3.5 py-1.5 rounded-md text-xs font-mono uppercase tracking-wider font-medium bg-[var(--color-achal)] text-[#08080b] hover:bg-[var(--color-achal-dark)] transition-colors"
+            className="px-4 py-1.5 rounded-full bg-[var(--color-achal)] text-[#0a0a0b] text-sm font-medium hover:bg-[var(--color-achal-dark)] transition-colors"
           >
-            Let’s talk
+            Let’s talk!
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 text-[var(--color-muted)]"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="22" height="22" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
             {open ? (
               <path d="M4 4l12 12M16 4L4 16" />
             ) : (
-              <path d="M3 5h14M3 10h14M3 15h14" />
+              <path d="M3 6h14M3 14h14" />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-[var(--color-beige-dark)] px-6 py-3 space-y-1">
-          {links.slice(1).map((link) => (
+        <div className="md:hidden border-t border-[var(--color-beige-dark)] px-6 py-4 space-y-3">
+          {links.map((l) => (
             <Link
-              key={link.href}
-              href={link.href}
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className={`block px-3 py-2 rounded-md text-xs font-mono uppercase tracking-wider transition-colors ${
-                isActive(link.href)
+              className={`block text-lg ${
+                isActive(l.href)
                   ? "text-[var(--color-achal)]"
-                  : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                  : "text-[var(--color-ink)]"
               }`}
             >
-              {link.label}
+              {l.label}
             </Link>
           ))}
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] pt-2">
+            {socials.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+                {s.label}
+              </a>
+            ))}
+          </div>
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block px-3 py-2 rounded-md text-xs font-mono uppercase tracking-wider font-medium bg-[var(--color-achal)] text-[#08080b]"
+            className="inline-block mt-2 px-4 py-2 rounded-full bg-[var(--color-achal)] text-[#0a0a0b] text-sm font-medium"
           >
-            Let’s talk
+            Let’s talk!
           </Link>
         </div>
       )}

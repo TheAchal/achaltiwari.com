@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getContentBySlug, getContentSlugs } from "@/lib/mdx";
 import MDXContent from "@/components/MDXContent";
-import ContactCTA from "@/components/ContactCTA";
 import Tag from "@/components/Tag";
 import Link from "next/link";
 
@@ -52,8 +51,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <div className="mt-10">
         <MDXContent source={content} />
       </div>
-
-      <ContactCTA />
     </div>
   );
 }
