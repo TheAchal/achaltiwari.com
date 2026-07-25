@@ -69,7 +69,9 @@ const projects = [
   },
 ];
 
-// Placeholder slots — replace with the real LinkedIn recommendations you paste in.
+// Hidden until Achal's real LinkedIn recommendations land. Flip to true after
+// replacing the slots below with the real quotes.
+const SHOW_TESTIMONIALS = false;
 const testimonials = [
   {
     quote: "Add a real recommendation here — a line or two from a manager or teammate.",
@@ -183,29 +185,31 @@ export default function Home() {
         })}
       </section>
 
-      {/* Testimonials */}
-      <section className="testi">
-        <div className="work__head">
-          <h2 className="eyebrow">What people say</h2>
-          <span className="eyebrow opacity-60">Recommendations</span>
-        </div>
-        <div className="testi__grid">
-          {testimonials.map((t, i) => (
-            <figure key={i} className="testi__card">
-              <blockquote className="testi__quote">“{t.quote}”</blockquote>
-              <figcaption className="testi__by">
-                <span className="testi__avatar" aria-hidden>
-                  {t.name.charAt(0)}
-                </span>
-                <span>
-                  <span className="testi__name">{t.name}</span>
-                  <span className="testi__role">{t.role}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      {/* Testimonials — hidden until real LinkedIn recommendations are added */}
+      {SHOW_TESTIMONIALS && (
+        <section className="testi">
+          <div className="work__head">
+            <h2 className="eyebrow">What people say</h2>
+            <span className="eyebrow opacity-60">Recommendations</span>
+          </div>
+          <div className="testi__grid">
+            {testimonials.map((t, i) => (
+              <figure key={i} className="testi__card">
+                <blockquote className="testi__quote">“{t.quote}”</blockquote>
+                <figcaption className="testi__by">
+                  <span className="testi__avatar" aria-hidden>
+                    {t.name.charAt(0)}
+                  </span>
+                  <span>
+                    <span className="testi__name">{t.name}</span>
+                    <span className="testi__role">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
