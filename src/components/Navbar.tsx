@@ -12,9 +12,9 @@ const links = [
 ];
 
 const socials = [
-  { label: "li", href: "https://www.linkedin.com/in/achaltiwari/" },
+  { label: "li", href: "https://www.linkedin.com/in/achal-tiwari-7701131b6/" },
   { label: "gh", href: "https://github.com/TheAchal" },
-  { label: "x", href: "https://x.com/AchalTiwari_" },
+  { label: "gfg", href: "https://www.geeksforgeeks.org/profile/achal11sp?tab=posts" },
 ];
 
 export default function Navbar() {

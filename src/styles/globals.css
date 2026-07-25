@@ -512,6 +512,9 @@ h1, h2, h3, h4, h5, h6 {
 .work__cover--3 {
   background: linear-gradient(135deg, #18c98a 0%, #0c5138 55%, #04150e 100%);
 }
+.work__cover--4 {
+  background: linear-gradient(135deg, #a06bff 0%, #3a1d6e 55%, #120a24 100%);
+}
 .work__cover-title,
 .work__cover-metric {
   position: relative;

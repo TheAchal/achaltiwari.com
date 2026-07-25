@@ -71,9 +71,9 @@ const jsonLd = {
         "Product strategy",
       ],
       sameAs: [
-        "https://www.linkedin.com/in/achaltiwari/",
+        "https://www.linkedin.com/in/achal-tiwari-7701131b6/",
         "https://github.com/TheAchal",
-        "https://x.com/AchalTiwari_",
+        "https://www.geeksforgeeks.org/profile/achal11sp?tab=posts",
       ],
     },
     {

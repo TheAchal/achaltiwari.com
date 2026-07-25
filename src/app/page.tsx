@@ -36,26 +36,38 @@ const projects = [
   {
     n: "01",
     title: "InfiNotes",
-    href: "/case-studies/infinotes",
+    href: "https://infinotes.live/",
+    external: true,
     roles: ["Product", "Growth", "0→1"],
-    metric: "10K+ users · 12.9% free→paid",
-    desc: "AI study-notes platform. 10,000+ users, 12.9% free-to-paid, profitable in five weeks — on zero marketing spend.",
+    metric: "10K+ users · profitable",
+    desc: "An AI study-notes platform. Past 10,000 users and profitable in five weeks, with nothing spent on marketing. Roughly 13 in every 100 free users go on to pay.",
   },
   {
     n: "02",
     title: "Project X",
     href: "/case-studies/project-x",
+    external: false,
     roles: ["Product", "AI", "Monetization"],
-    metric: "Text-first AI study companion",
-    desc: "AI study companion. Hinglish, peer-toned, priced off a token economy modelled from real model cost.",
+    metric: "AI study companion",
+    desc: "An AI study buddy for Indian students. It talks in Hinglish, more like a friend than a teacher, and its pricing is built around what the AI actually costs to run.",
   },
   {
     n: "03",
-    title: "NestPrep",
-    href: "/case-studies/nestprep",
-    roles: ["Product", "0→1", "Full-stack"],
-    metric: "Live CBT engine · built 0→1",
-    desc: "Science-prep platform built 0→1: live CBT engine, auth, checkout, and an honest results page.",
+    title: "NEET Counselling",
+    href: "https://neetcounselling.live/",
+    external: true,
+    roles: ["Product", "0→1", "Growth"],
+    metric: "Live · lead to payment",
+    desc: "Helps NEET students work out their real college options once results are out. I built the whole path, from first click to payment.",
+  },
+  {
+    n: "04",
+    title: "Vijay Batch",
+    href: "https://vijaybatch.live/",
+    external: true,
+    roles: ["Product", "0→1", "Go-to-Market"],
+    metric: "Live · enrolment funnel",
+    desc: "The enrolment site for a NEET repeater batch. Payments, sign-ups, and tracking, all live and running.",
   },
 ];
 
@@ -87,9 +99,10 @@ export default function Home() {
       <section id="intro" className="py-24 scroll-mt-24">
         <p className="text-3xl sm:text-5xl font-semibold leading-[1.12] max-w-4xl tracking-tight text-[var(--color-ink)]">
           I turn ideas into{" "}
-          <span className="text-[var(--color-achal)]">live products</span> — a
-          profitable study platform with 10,000+ users, AI companions, and 0→1
-          builds shipped across domains.
+          <span className="text-[var(--color-achal)]">live products</span>. So
+          far that&apos;s a profitable platform with 10,000+ users, a few AI
+          apps, and a bunch of things I&apos;ve shipped from scratch across
+          different domains.
         </p>
       </section>
 
@@ -115,29 +128,47 @@ export default function Home() {
           </Link>
         </div>
 
-        {projects.map((p, i) => (
-          <Link key={p.n} href={p.href} className="work__item group">
-            <div className={`work__cover work__cover--${i + 1}`}>
-              <span className="work__cover-title">{p.title}</span>
-              <span className="work__cover-metric">{p.metric}</span>
-            </div>
-            <div className="work__info">
-              <span className="work__num">{p.n}</span>
-              <h3 className="work__name">{p.title}</h3>
-              <div className="work__roles">
-                {p.roles.map((r) => (
-                  <span key={r} className="work__role">
-                    {r}
-                  </span>
-                ))}
+        {projects.map((p, i) => {
+          const inner = (
+            <>
+              <div className={`work__cover work__cover--${i + 1}`}>
+                <span className="work__cover-title">{p.title}</span>
+                <span className="work__cover-metric">{p.metric}</span>
               </div>
-              <p className="work__desc">{p.desc}</p>
-              <span className="work__cta">
-                View case study <span aria-hidden>↗</span>
-              </span>
-            </div>
-          </Link>
-        ))}
+              <div className="work__info">
+                <span className="work__num">{p.n}</span>
+                <h3 className="work__name">{p.title}</h3>
+                <div className="work__roles">
+                  {p.roles.map((r) => (
+                    <span key={r} className="work__role">
+                      {r}
+                    </span>
+                  ))}
+                </div>
+                <p className="work__desc">{p.desc}</p>
+                <span className="work__cta">
+                  {p.external ? "Visit site" : "Read the story"}{" "}
+                  <span aria-hidden>↗</span>
+                </span>
+              </div>
+            </>
+          );
+          return p.external ? (
+            <a
+              key={p.n}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="work__item group"
+            >
+              {inner}
+            </a>
+          ) : (
+            <Link key={p.n} href={p.href} className="work__item group">
+              {inner}
+            </Link>
+          );
+        })}
       </section>
 
       {/* Testimonials */}

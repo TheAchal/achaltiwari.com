@@ -7,7 +7,7 @@ import Divider from "@/components/Divider";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Achal Tiwari — Product Manager at Infinity Learn, building AI-powered education products. Bio, skills, and background.",
+    "Achal Tiwari, Product Manager at Infinity Learn, building AI products across domains. Bio, skills, and background.",
 };
 
 export default function AboutPage() {
@@ -64,25 +64,32 @@ export default function AboutPage() {
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-success)] flex-shrink-0" />
                 <span>
-                  <strong>InfiNotes</strong> — AI-powered study notes platform.
-                  Past 10,000 registered users, profitable, growing on zero
+                  <strong>InfiNotes</strong>. An AI-powered study notes platform.
+                  Past 10,000 registered users, profitable, and growing on zero
                   marketing spend.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-achal)] flex-shrink-0" />
                 <span>
-                  <strong>Project X</strong> — an AI study companion for Indian
-                  students. Text-first, Hinglish, peer-toned. Launching on
-                  readiness, not a calendar.
+                  <strong>Project X</strong>. An AI study companion for Indian
+                  students. Text-first, Hinglish, and peer-toned. Launching when
+                  it&apos;s ready, not on a calendar.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-claude)] flex-shrink-0" />
                 <span>
-                  <strong>NestPrep</strong> — a science-prep platform for
-                  NEST/IIT aspirants. Built from zero, live with a real CBT
-                  engine, checkout, and an honest results page.
+                  <strong>NEET Counselling</strong>. A site that helps NEET
+                  students find their real college options after results. I built
+                  the full path from first click to payment.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-success)] flex-shrink-0" />
+                <span>
+                  <strong>Vijay Batch</strong>. The enrolment site for a NEET
+                  repeater batch. Payments, sign-ups, and tracking, all live.
                 </span>
               </li>
             </ul>
@@ -183,16 +190,16 @@ export default function AboutPage() {
             who knows the answer might be wrong, and ships anyway.
           </p>
           <p>
-            I treat every assumption as testable, every failure as a data
-            point, and every collaborator — including the AI I build with — as
-            someone worth listening to.
+            I treat every assumption as testable and every failure as a data
+            point, and I listen to every collaborator I work with, the AI
+            included.
           </p>
           <div className="border-l-2 border-[var(--color-claude)]/40 bg-[var(--color-claude-light)] rounded-r-lg px-4 py-3 text-sm text-[var(--color-muted)]">
             <span className="text-[var(--color-claude)] font-medium">
               Claude, my AI collaborator:
             </span>{" "}
-            “He treats me as a thinking partner, not a text generator — and
-            that’s the reason our work together keeps getting better.”
+            “He treats me as a thinking partner, not a text generator, and
+            that’s why our work together keeps getting better.”
           </div>
           <p className="text-[var(--color-muted)]">
             Want the full story?{" "}
@@ -211,7 +218,7 @@ export default function AboutPage() {
       {/* Social Links */}
       <section className="grid sm:grid-cols-3 gap-4">
         <a
-          href="https://www.linkedin.com/in/achaltiwari/"
+          href="https://www.linkedin.com/in/achal-tiwari-7701131b6/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[var(--color-card)] border border-[var(--color-beige-dark)] rounded-xl p-5 hover:border-[var(--color-muted)] transition-colors group"
@@ -224,16 +231,16 @@ export default function AboutPage() {
           </p>
         </a>
         <a
-          href="https://x.com/AchalTiwari_"
+          href="https://www.geeksforgeeks.org/profile/achal11sp?tab=posts"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[var(--color-card)] border border-[var(--color-beige-dark)] rounded-xl p-5 hover:border-[var(--color-muted)] transition-colors group"
         >
           <p className="font-medium text-[var(--color-ink)] group-hover:text-[var(--color-achal)] transition-colors">
-            Twitter
+            GeeksforGeeks
           </p>
           <p className="text-sm text-[var(--color-muted)] mt-1">
-            Thoughts &amp; threads
+            Writing &amp; posts
           </p>
         </a>
         <a

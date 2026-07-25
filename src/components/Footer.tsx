@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const EMAIL = "product@i3w.ai";
+const EMAIL = "achal.tiwaari@gmail.com";
 
 const marqueeItems = Array.from({ length: 6 });
 
@@ -59,7 +59,7 @@ export default function Footer() {
             <p className="eyebrow mb-3">Elsewhere</p>
             <div className="flex flex-col gap-1.5 text-[var(--color-muted)]">
               <a
-                href="https://www.linkedin.com/in/achaltiwari/"
+                href="https://www.linkedin.com/in/achal-tiwari-7701131b6/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[var(--color-ink)] transition-colors"
@@ -75,12 +75,12 @@ export default function Footer() {
                 GitHub
               </a>
               <a
-                href="https://x.com/AchalTiwari_"
+                href="https://www.geeksforgeeks.org/profile/achal11sp?tab=posts"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[var(--color-ink)] transition-colors"
               >
-                X / Twitter
+                GeeksforGeeks
               </a>
             </div>
           </div>
@@ -105,10 +105,18 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-muted)] border-t border-[var(--color-beige-dark)] pt-6">
           <span>
-            © 2026 Achal Tiwari — Product Manager who builds &amp; ships AI
-            products.
+            © 2026 Achal Tiwari. Product Manager at{" "}
+            <a
+              href="https://i3w.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-ink)] transition-colors"
+            >
+              I3W
+            </a>
+            , building and shipping AI products.
           </span>
-          <span>Designed &amp; built by directing Claude.</span>
+          <span>Built by Achal.</span>
         </div>
       </div>
     </footer>

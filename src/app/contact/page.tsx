@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const EMAIL = "product@i3w.ai";
-const LINKEDIN = "https://www.linkedin.com/in/achaltiwari/";
+const EMAIL = "achal.tiwaari@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/achal-tiwari-7701131b6/";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Achal Tiwari — Product Manager, open to Senior / AI-PM roles in the UK and India.",
+    "Get in touch with Achal Tiwari, a Product Manager open to Senior / AI-PM roles in the UK and India.",
 };
 
 export default function ContactPage() {
@@ -23,9 +23,9 @@ export default function ContactPage() {
         Let’s talk.
       </h1>
       <p className="mt-5 text-lg text-[var(--color-ink)] leading-relaxed">
-        I’m a product manager who ships — AI education products, real users,
-        real revenue. If you’re hiring, building something in edtech or AI, or
-        just want to compare notes, I’d love to hear from you.
+        I’m a product manager who ships. I build AI products that get real users
+        and real revenue. If you’re hiring, building something with AI, or just
+        want to trade notes, I’d love to hear from you.
       </p>
 
       <div className="mt-8 bg-[var(--color-card)] border border-[var(--color-beige-dark)] rounded-xl p-6">
@@ -43,7 +43,7 @@ export default function ContactPage() {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-achal)] flex-shrink-0" />
-            Teams building AI-native products, especially in education
+            Teams building AI-native products, in any domain
           </li>
         </ul>
       </div>

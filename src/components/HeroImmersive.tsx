@@ -98,7 +98,7 @@ export default function HeroImmersive() {
 
       {/* Lead block — greeting · name · giant title · scroll (bottom-left) */}
       <div className="hero__lead">
-        <p className="eyebrow hero__greeting">Hi there — this is</p>
+        <p className="eyebrow hero__greeting">Hey, this is</p>
         <p className="hero__name">
           Achal <span>Tiwari</span>
         </p>
@@ -112,8 +112,9 @@ export default function HeroImmersive() {
 
       {/* Bio — bottom-right */}
       <p className="hero__intro">
-        Product Manager at Infinity Learn. I take ideas 0→1 and ship real AI
-        products — 10K+ users, profitable in five weeks.
+        Product Manager at Infinity Learn. I take ideas from zero to shipped and
+        build AI products people actually use. Past 10,000 users, profitable in
+        five weeks.
       </p>
     </section>
     </div>
