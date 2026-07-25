@@ -394,7 +394,10 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   width: 100vw;
   margin-inline: calc(50% - 50vw);
-  height: clamp(15rem, 30vh, 22rem);
+  /* Tall enough to contain the full diagonal sweep so the rotated bands run
+     off the left/right edges instead of being clipped flat at top & bottom.
+     Scales with vw because the rotation-induced rise grows on wider screens. */
+  height: clamp(20rem, 26vw, 36rem);
   margin-block: 4rem;
   overflow: hidden;
   display: grid;
