@@ -503,8 +503,18 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(180deg, rgba(12, 13, 16, 0) 40%, rgba(12, 13, 16, 0.55));
   pointer-events: none;
 }
+/* Screenshot covers need a stronger bottom scrim so the white label stays
+   legible over bright product UI. */
+.work__cover--shot::after {
+  background: linear-gradient(180deg, rgba(12, 13, 16, 0) 32%, rgba(12, 13, 16, 0.9));
+}
 .group:hover .work__cover {
   transform: scale(1.015);
+}
+.work__cover-img {
+  object-fit: cover;
+  object-position: top left;
+  z-index: 0;
 }
 .work__cover--1 {
   background: linear-gradient(135deg, #ff5a1f 0%, #7a1d00 55%, #1a0a03 100%);
@@ -515,8 +525,21 @@ h1, h2, h3, h4, h5, h6 {
 .work__cover--3 {
   background: linear-gradient(135deg, #18c98a 0%, #0c5138 55%, #04150e 100%);
 }
-.work__cover--4 {
-  background: linear-gradient(135deg, #a06bff 0%, #3a1d6e 55%, #120a24 100%);
+.work__cover-tag {
+  position: absolute;
+  top: 1.3rem;
+  left: 1.3rem;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  backdrop-filter: blur(4px);
 }
 .work__cover-title,
 .work__cover-metric {

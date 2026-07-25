@@ -109,13 +109,12 @@ export default function ResumePage() {
           <div>
             <div className="flex items-baseline justify-between gap-3 flex-wrap">
               <h3 className="text-lg font-bold" style={{ fontFamily: "var(--font-heading)" }}>
-                NEET Counselling, Vijay Batch, and more 0→1 builds
+                NEET Counselling and more 0→1 builds
               </h3>
               <span className="text-xs text-[var(--color-muted)]">Live · owner</span>
             </div>
             <ul className="mt-2 space-y-1.5 text-[var(--color-ink)] text-sm leading-relaxed">
               <li>• NEET Counselling: a full lead-to-payment funnel that helps NEET students find their real college options after results.</li>
-              <li>• Vijay Batch: the enrolment site for a NEET repeater batch, with payments, sign-ups, and tracking, all live.</li>
               <li>• Shipped several more production products by directing AI: German AI (a teacher platform) and the I3W company site.</li>
             </ul>
           </div>

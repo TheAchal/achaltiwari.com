@@ -85,13 +85,6 @@ export default function AboutPage() {
                   the full path from first click to payment.
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="mt-1.5 w-2 h-2 rounded-full bg-[var(--color-success)] flex-shrink-0" />
-                <span>
-                  <strong>Vijay Batch</strong>. The enrolment site for a NEET
-                  repeater batch. Payments, sign-ups, and tracking, all live.
-                </span>
-              </li>
             </ul>
           </div>
         </div>

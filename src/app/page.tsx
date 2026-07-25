@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeroImmersive from "@/components/HeroImmersive";
 
 // Crossing-marquee service words (two bands)
@@ -38,6 +39,8 @@ const projects = [
     title: "InfiNotes",
     href: "https://infinotes.live/",
     external: true,
+    img: "/images/work/infinotes.png",
+    tag: null,
     roles: ["Product", "Growth", "0→1"],
     metric: "10K+ users · profitable",
     desc: "An AI study-notes platform. Past 10,000 users and profitable in five weeks, with nothing spent on marketing. Roughly 13 in every 100 free users go on to pay.",
@@ -47,6 +50,8 @@ const projects = [
     title: "Project X",
     href: "/case-studies/project-x",
     external: false,
+    img: null,
+    tag: "Anonymized · pre-launch",
     roles: ["Product", "AI", "Monetization"],
     metric: "AI study companion",
     desc: "An AI study buddy for Indian students. It talks in Hinglish, more like a friend than a teacher, and its pricing is built around what the AI actually costs to run.",
@@ -56,18 +61,11 @@ const projects = [
     title: "NEET Counselling",
     href: "https://neetcounselling.live/",
     external: true,
+    img: "/images/work/neetcounselling.png",
+    tag: null,
     roles: ["Product", "0→1", "Growth"],
     metric: "Live · lead to payment",
     desc: "Helps NEET students work out their real college options once results are out. I built the whole path, from first click to payment.",
-  },
-  {
-    n: "04",
-    title: "Vijay Batch",
-    href: "https://vijaybatch.live/",
-    external: true,
-    roles: ["Product", "0→1", "Go-to-Market"],
-    metric: "Live · enrolment funnel",
-    desc: "The enrolment site for a NEET repeater batch. Payments, sign-ups, and tracking, all live and running.",
   },
 ];
 
@@ -131,7 +129,21 @@ export default function Home() {
         {projects.map((p, i) => {
           const inner = (
             <>
-              <div className={`work__cover work__cover--${i + 1}`}>
+              <div
+                className={`work__cover work__cover--${i + 1}${
+                  p.img ? " work__cover--shot" : ""
+                }`}
+              >
+                {p.img && (
+                  <Image
+                    src={p.img}
+                    alt={`${p.title} screenshot`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 50vw"
+                    className="work__cover-img"
+                  />
+                )}
+                {p.tag && <span className="work__cover-tag">{p.tag}</span>}
                 <span className="work__cover-title">{p.title}</span>
                 <span className="work__cover-metric">{p.metric}</span>
               </div>
