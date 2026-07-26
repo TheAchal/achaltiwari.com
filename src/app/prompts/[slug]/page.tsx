@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getContentBySlug, getContentSlugs } from "@/lib/mdx";
 import MDXContent from "@/components/MDXContent";
 import Tag from "@/components/Tag";
@@ -14,16 +15,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const { meta } = getContentBySlug("prompts", slug);
+  const entry = getContentBySlug("prompts", slug);
+  if (!entry) return { title: "Not found" };
   return {
-    title: meta.title,
-    description: meta.description,
+    title: entry.meta.title,
+    description: entry.meta.description,
   };
 }
 
 export default async function PromptPage({ params }: PageProps) {
   const { slug } = await params;
-  const { meta, content } = getContentBySlug("prompts", slug);
+  const entry = getContentBySlug("prompts", slug);
+  if (!entry) notFound();
+  const { meta, content } = entry;
 
   return (
     <div className="max-w-2xl mx-auto">

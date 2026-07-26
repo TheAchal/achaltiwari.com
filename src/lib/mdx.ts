@@ -14,11 +14,15 @@ export function getContentSlugs(folder: string): string[] {
     .map((f) => f.replace(/\.mdx$/, ""));
 }
 
+/* Returns null for a slug with no file, so routes can 404 instead of throwing.
+   An unknown slug is a normal thing for a URL to contain, not an error. */
 export function getContentBySlug(
   folder: string,
   slug: string
-): { meta: ContentMeta; content: string } {
+): { meta: ContentMeta; content: string } | null {
   const filePath = path.join(contentDir, folder, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return null;
+
   const raw = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(raw);
 
@@ -36,11 +40,10 @@ export function getContentBySlug(
 }
 
 export function getAllContent<T extends ContentMeta>(folder: string): T[] {
-  const slugs = getContentSlugs(folder);
-  const items = slugs.map((slug) => {
-    const { meta } = getContentBySlug(folder, slug);
-    return meta as T;
-  });
+  const items = getContentSlugs(folder)
+    .map((slug) => getContentBySlug(folder, slug))
+    .filter((entry) => entry !== null)
+    .map((entry) => entry.meta as T);
 
   return items.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
