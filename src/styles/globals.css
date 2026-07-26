@@ -351,31 +351,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   /* Perspective in em so the depth scales with the clamped title size. */
   perspective: 9em;
-  /* Anchored left so the recede below doesn't drag the word off the margin. */
-  transform-origin: 0% 50%;
 }
-/* A turning cube is taller than the line box it rests in — at 45° its corners
-   reach ~0.21em past the line, which is enough to clip the descender space of
-   "Real AI" above it. Pulling the box back as it turns keeps the corners
-   inside the line and reads as depth rather than as a spacing fix, so the
-   title keeps its line-height: 1. */
-.flipw.is-turning {
-  animation: flipw-recede 780ms cubic-bezier(0.76, 0, 0.24, 1);
-}
-@keyframes flipw-recede {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.82);
-  }
-}
+/* The box is pushed back by exactly the half-depth its faces are pushed
+   forward, so whichever side is facing you sits at depth zero. Without this
+   the front face is 0.5em nearer the camera and perspective magnifies it
+   ~6%, which makes the word render larger than its own layout box and
+   larger than the lines above it. */
 .flipw__box {
   position: relative;
   display: block;
   transform-style: preserve-3d;
-  transform: rotateX(calc(var(--step, 0) * 90deg));
+  transform: translateZ(-0.5em) rotateX(calc(var(--step, 0) * 90deg));
   transition: transform 780ms cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
 }
