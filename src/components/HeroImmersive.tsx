@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import FlipWord from "./FlipWord";
 
 export default function HeroImmersive() {
   const pinRef = useRef<HTMLDivElement>(null);
@@ -105,7 +106,7 @@ export default function HeroImmersive() {
         <h1 className="hero__title">
           <span>I Ship</span>
           <span>Real AI</span>
-          <span className="o">Products</span>
+          <FlipWord />
         </h1>
         <span className="hero__scroll eyebrow">(Scroll down)</span>
       </div>

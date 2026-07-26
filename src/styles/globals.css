@@ -346,6 +346,76 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-achal);
 }
 
+/* ===== Hero: last word turns like a box ===== */
+.flipw {
+  display: inline-block;
+  /* Perspective in em so the depth scales with the clamped title size. */
+  perspective: 9em;
+  /* Anchored left so the recede below doesn't drag the word off the margin. */
+  transform-origin: 0% 50%;
+}
+/* A turning cube is taller than the line box it rests in — at 45° its corners
+   reach ~0.21em past the line, which is enough to clip the descender space of
+   "Real AI" above it. Pulling the box back as it turns keeps the corners
+   inside the line and reads as depth rather than as a spacing fix, so the
+   title keeps its line-height: 1. */
+.flipw.is-turning {
+  animation: flipw-recede 780ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+@keyframes flipw-recede {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.82);
+  }
+}
+.flipw__box {
+  position: relative;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--step, 0) * 90deg));
+  transition: transform 780ms cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+/* Each side is pushed out to half the line box, then rotated onto its own
+   face. Negative steps between sides means the box turns upward. */
+.flipw__face {
+  display: block;
+  white-space: nowrap;
+  backface-visibility: hidden;
+  transform: rotateX(calc(var(--i) * -90deg)) translateZ(0.5em);
+}
+/* The lead face stays in flow so it sizes the box; the rest stack onto it.
+   "Products" is also the longest word, so the line never reflows. */
+.flipw__face:not(.flipw__face--lead) {
+  position: absolute;
+  inset: 0;
+}
+/* Light falls off as a side turns away from the viewer. */
+.flipw.is-turning .flipw__face {
+  animation: flipw-shade 780ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+@keyframes flipw-shade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.62;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flipw__box {
+    transition: none;
+  }
+  .flipw.is-turning,
+  .flipw.is-turning .flipw__face {
+    animation: none;
+  }
+}
+
 .hero__intro {
   grid-column: 10 / -1;
   grid-row: 2;
