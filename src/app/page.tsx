@@ -57,8 +57,8 @@ const projects = [
     img: null,
     tag: "Anonymized · pre-launch",
     roles: ["Product", "AI", "Monetization"],
-    metric: "AI study companion",
-    desc: "An AI study buddy for Indian students. It talks in Hinglish, more like a friend than a teacher, and its pricing is built around what the AI actually costs to run.",
+    metric: "Design locked · in build",
+    desc: "An AI study buddy for Indian students. It talks in Hinglish, more like a friend than a teacher, and its pricing is built around what the AI actually costs to run. Every flow is designed and the build is under way.",
   },
   {
     n: "03",
@@ -68,8 +68,8 @@ const projects = [
     img: "/images/work/neetcounselling.png",
     tag: null,
     roles: ["Product", "0→1", "Growth"],
-    metric: "Live · lead to payment",
-    desc: "Helps NEET students work out their real college options once results are out. I built the whole path, from first click to payment.",
+    metric: "Live · three tiers",
+    desc: "Helps NEET students work out their real college options once results are out. I built the whole path, from first click to payment, now across three tiers that run up to one-to-one counselling.",
   },
 ];
 
@@ -78,7 +78,7 @@ const projects = [
 const SHOW_TESTIMONIALS = false;
 const testimonials = [
   {
-    quote: "Add a real recommendation here — a line or two from a manager or teammate.",
+    quote: "Add a real recommendation here: a line or two from a manager or teammate.",
     name: "Name",
     role: "Title · Company",
   },
@@ -88,7 +88,7 @@ const testimonials = [
     role: "Title · Company",
   },
   {
-    quote: "Third recommendation slot — ideally someone who saw you ship end-to-end.",
+    quote: "Third recommendation slot: ideally someone who saw you ship end-to-end.",
     name: "Name",
     role: "Title · Company",
   },
@@ -107,7 +107,7 @@ function readingList() {
       title: "Our Story",
       href: "/our-story",
       desc: "How this site, and the way I work with AI, actually came together.",
-      meta: "12 chapters",
+      meta: "11 chapters",
     },
     {
       n: "02",
@@ -230,7 +230,7 @@ export default function Home() {
         })}
       </section>
 
-      {/* More to read — these four pages used to be reachable only from the
+      {/* More to read: these four pages used to be reachable only from the
           footer, so nothing on the way down the page pointed at them. */}
       <section id="more" className="more scroll-mt-24">
         <div className="work__head">
@@ -253,7 +253,7 @@ export default function Home() {
         ))}
       </section>
 
-      {/* Testimonials — hidden until real LinkedIn recommendations are added */}
+      {/* Testimonials, hidden until real LinkedIn recommendations are added */}
       {SHOW_TESTIMONIALS && (
         <section className="testi">
           <div className="work__head">

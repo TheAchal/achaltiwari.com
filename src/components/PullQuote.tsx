@@ -14,7 +14,7 @@ export default function PullQuote({ children, attribution }: PullQuoteProps) {
       </p>
       {attribution && (
         <cite className="block mt-3 text-sm text-[var(--color-muted)] not-italic">
-          — {attribution}
+          {attribution}
         </cite>
       )}
     </blockquote>

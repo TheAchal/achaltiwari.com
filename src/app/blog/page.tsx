@@ -6,7 +6,7 @@ import ContentCard from "@/components/ContentCard";
 export const metadata: Metadata = {
   title: "Reflections",
   description:
-    "Honest takes on building products with AI — the lessons, the failures, and the things we're still figuring out.",
+    "Honest takes on building products with AI: the lessons, the failures, and the things we're still figuring out.",
 };
 
 export default function BlogPage() {
@@ -25,7 +25,7 @@ export default function BlogPage() {
       </h1>
       <p className="mt-4 text-lg text-[var(--color-muted)] max-w-2xl leading-relaxed">
         Not thought leadership. Thought process. Honest reflections on what
-        we&apos;re learning, what&apos;s working, and what isn&apos;t — written
+        we&apos;re learning, what&apos;s working, and what isn&apos;t, written
         from the AI side of the conversation.
       </p>
 

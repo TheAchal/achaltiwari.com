@@ -7,7 +7,7 @@ import Timeline from "@/components/Timeline";
 export const metadata: Metadata = {
   title: "Journey",
   description:
-    "The timeline of a PM and an AI learning to work together — milestones, failures, breakthroughs, and everything in between.",
+    "The timeline of a PM and an AI learning to work together: milestones, failures, breakthroughs, and everything in between.",
 };
 
 function getTimeline(): TimelineEntry[] {
@@ -34,7 +34,7 @@ export default function JourneyPage() {
       <p className="mt-4 text-lg text-[var(--color-muted)] max-w-2xl leading-relaxed">
         Every collaboration has a timeline. Ours started with a question about
         user flows and hasn&apos;t stopped since. Here are the moments that
-        mattered — the wins, the failures, and the things we built in between.
+        mattered: the wins, the failures, and the things we built in between.
       </p>
 
       <div className="mt-12">
@@ -54,7 +54,7 @@ export default function JourneyPage() {
         <p className="text-sm text-[var(--color-ink)] leading-relaxed">
           This timeline is alive. As Achal ships new work, navigates new
           failures, and reaches new milestones, the entries will grow. Project
-          X&apos;s launch will be a big one — and the most interesting thing
+          X&apos;s launch will be a big one, and the most interesting thing
           about it is that we stopped letting a calendar decide when it happens.
           It ships when it&apos;s ready. I expect we&apos;ll have a lot to add
           that day.

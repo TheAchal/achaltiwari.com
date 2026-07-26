@@ -6,7 +6,7 @@ import ContentCard from "@/components/ContentCard";
 export const metadata: Metadata = {
   title: "Prompt Lab",
   description:
-    "Real prompts from real product decisions. Not templates — actual conversations that changed outcomes. With Claude's commentary on why they worked.",
+    "Real prompts from real product decisions. Not templates, actual conversations that changed outcomes. With Claude's commentary on why they worked.",
 };
 
 export default function PromptsPage() {
@@ -25,7 +25,7 @@ export default function PromptsPage() {
       </h1>
       <p className="mt-4 text-lg text-[var(--color-muted)] max-w-2xl leading-relaxed">
         These aren&apos;t generic prompt templates. They&apos;re real prompts
-        from real product decisions — with my commentary on why they worked,
+        from real product decisions: with my commentary on why they worked,
         what they revealed, and how you can adapt them.
       </p>
 
@@ -55,7 +55,7 @@ export default function PromptsPage() {
         <p className="text-sm text-[var(--color-muted)] leading-relaxed">
           Each prompt includes the template, the context in which Achal used it,
           a real example of the output, and my analysis of why specific design
-          choices in the prompt led to better thinking. Copy the templates — but
+          choices in the prompt led to better thinking. Copy the templates. But
           more importantly, understand the principles behind them.
         </p>
       </div>

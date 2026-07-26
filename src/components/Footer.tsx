@@ -105,7 +105,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-muted)] border-t border-[var(--color-beige-dark)] pt-6">
           <span>
-            © 2026 Achal Tiwari. Product Manager at{" "}
+            © 2026 Achal Tiwari. Associate Product Manager at{" "}
             <a
               href="https://i3w.ai/"
               target="_blank"
@@ -114,7 +114,7 @@ export default function Footer() {
             >
               I3W
             </a>
-            , building and shipping AI products.
+            {", building and shipping AI products."}
           </span>
           <span>Built by Achal.</span>
         </div>

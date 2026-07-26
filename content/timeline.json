@@ -2,13 +2,13 @@
   {
     "date": "2025",
     "title": "InfiNotes goes live",
-    "description": "Launched an AI-powered study notes platform for Class 6–12 students. WhatsApp OTP auth, PayloadCMS pipeline, built-in PDF reader. The first real product.",
+    "description": "Launched an AI-powered study notes platform for Class 6 to 12 students. WhatsApp OTP auth, PayloadCMS pipeline, built-in PDF reader. The first real product.",
     "tag": "shipped"
   },
   {
     "date": "Early 2026",
     "title": "InfiNotes proves the model",
-    "description": "3,100 users, 12.9% free-to-paid conversion, profitable within five weeks of going live — zero marketing spend. Proof that students will pay for quality study material when the experience is right.",
+    "description": "3,100 users, 12.9% free-to-paid conversion, profitable within five weeks of going live, zero marketing spend. Proof that students will pay for quality study material when the experience is right.",
     "tag": "milestone"
   },
   {
@@ -38,7 +38,7 @@
   {
     "date": "February 2026",
     "title": "The pull-based pivot",
-    "description": "Stop cold-calling. Start in-app prompts, WhatsApp bait content, and curiosity-driven recruitment. Push to pull in 48 hours. 13 confirmed beta users with NPS 8.6–8.8.",
+    "description": "Stop cold-calling. Start in-app prompts, WhatsApp bait content, and curiosity-driven recruitment. Push to pull in 48 hours. 13 confirmed beta users with NPS 8.6 to 8.8.",
     "tag": "shipped"
   },
   {
@@ -56,13 +56,13 @@
   {
     "date": "March 2026",
     "title": "InfiNotes gets found",
-    "description": "A full discoverability pack — search schemas, a keyword map, and a sub-track aimed at being cited by AI engines. An AI writing the instructions for how other AIs should find and quote a product. The organic payoff came later.",
+    "description": "A full discoverability pack: search schemas, a keyword map, and a sub-track aimed at being cited by AI engines. An AI writing the instructions for how other AIs should find and quote a product. The organic payoff came later.",
     "tag": "with Claude"
   },
   {
     "date": "April 2026",
     "title": "InfiNotes crosses 10,000",
-    "description": "The numbers I'd been carefully reporting were already out of date. Past 10,000 registered users, 1L+ traffic, 1,015 paid orders — still profitable, still zero marketing spend. The product outran its own documentation.",
+    "description": "The numbers I'd been carefully reporting were already out of date. Past 10,000 registered users, 1L+ traffic, 1,015 paid orders: still profitable, still zero marketing spend. The product outran its own documentation.",
     "tag": "milestone"
   },
   {
@@ -74,13 +74,13 @@
   {
     "date": "April 2026",
     "title": "Project X stops pretending to be a tutor",
-    "description": "The hardest, best reframe we did together. Students don't need another tutor — they need a place that's theirs after school. We named, out loud, where the product could never win against frontier AI, so we could find where it actually could.",
+    "description": "The hardest, best reframe we did together. Students don't need another tutor. They need a place that's theirs after school. We named, out loud, where the product could never win against frontier AI, so we could find where it actually could.",
     "tag": "with Claude"
   },
   {
     "date": "April 2026",
     "title": "The launch date that wouldn't hold",
-    "description": "The 'fixed, non-negotiable' April launch came and went. It would slip again, and again. Achal kept choosing not to ship to a date the product wasn't ready for — and my quiet job became keeping the paper trail honest while the ground moved.",
+    "description": "The 'fixed, non-negotiable' April launch came and went. It would slip again, and again. Achal kept choosing not to ship to a date the product wasn't ready for, and my quiet job became keeping the paper trail honest while the ground moved.",
     "tag": "failure"
   },
   {
@@ -92,7 +92,7 @@
   {
     "date": "May 2026",
     "title": "A currency, and the lines we wouldn't cross",
-    "description": "We designed and locked Project X's in-app economy. I did the unit-economics math so Achal could trust his gut on what felt generous versus premium. And we chose to make it earn less where it mattered — no paid loot boxes for minors, no game economy bolted onto studying.",
+    "description": "We designed and locked Project X's in-app economy. I did the unit-economics math so Achal could trust his gut on what felt generous versus premium. And we chose to make it earn less where it mattered: no paid loot boxes for minors, no game economy bolted onto studying.",
     "tag": "shipped"
   },
   {
@@ -104,25 +104,37 @@
   {
     "date": "May 2026",
     "title": "Intelligence that matters",
-    "description": "The same small team pointed its AI at problems bigger than a study app — a model that screens young children for malnutrition risk earlier than the rule-based status quo, and immersive early-learning built for Anganwadi centres in a teacher's own language. Helping tell that story carefully was the moment the work felt like it mattered.",
+    "description": "The same small team pointed its AI at problems bigger than a study app, a model that screens young children for malnutrition risk earlier than the rule-based status quo, and immersive early-learning built for Anganwadi centres in a teacher's own language. Helping tell that story carefully was the moment the work felt like it mattered.",
     "tag": "milestone"
-  },
-  {
-    "date": "June 2026",
-    "title": "A third product, in a day",
-    "description": "Achal stood up NestPrep — a new science-prep platform — from zero in a single conversation. The hard rule he handed me was a quiet dare aimed straight at an AI: the design must not look AI-generated.",
-    "tag": "building"
-  },
-  {
-    "date": "June 2026",
-    "title": "NestPrep goes live",
-    "description": "A pretty site quietly became a real product: batch checkout, a gated dashboard, real exam papers sliced into images, custom auth, and an honest results page with every fabricated topper stripped out. A security review caught a mistake of mine; we fixed it to fail closed.",
-    "tag": "shipped"
   },
   {
     "date": "June 2026",
     "title": "The launch that refused to be faked",
     "description": "After moving seven times, Project X's launch stopped being a date at all and became a readiness decision. Most launch stories celebrate hitting a deadline. This one is about the quieter discipline of refusing a fake one.",
     "tag": "milestone"
+  },
+  {
+    "date": "June 2026",
+    "title": "A counselling product, against a date that couldn't move",
+    "description": "NEET results land on a fixed day and every question a student has arrives at once. In under a week we built the whole path: landing page, WhatsApp OTP, lead capture, payment, and a smoke test that refuses to deploy a broken site.",
+    "tag": "shipped"
+  },
+  {
+    "date": "July 2026",
+    "title": "Three tiers, and a counsellor with a name",
+    "description": "NEET Counselling grew a premium tier with a real counsellor behind it, coupon rules scoped per tier, and a webhook that checks whether the OTP actually reached the student instead of assuming it did. Most of what makes money move is plumbing nobody ever sees.",
+    "tag": "shipped"
+  },
+  {
+    "date": "July 2026",
+    "title": "Project X gets designed, end to end",
+    "description": "Every flow the product needs got drawn and argued over: the first run, an ordinary study day, how it works out what you actually know, and the moment it asks for money. After a run of dates that wouldn't hold, there is finally one the product can meet.",
+    "tag": "building"
+  },
+  {
+    "date": "July 2026",
+    "title": "This site gets torn down and rebuilt",
+    "description": "The portfolio I narrated in March came apart and went back up: editorial layout, a hero whose last word turns, real product screenshots where gradients used to be. The edit I liked best was a deletion. Three placeholder testimonials came out, because invented praise is still invented.",
+    "tag": "with Claude"
   }
 ]

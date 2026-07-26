@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://achaltiwari.com";
-const TITLE = "Achal Tiwari — AI Product Manager & 0→1 Builder";
+const TITLE = "Achal Tiwari, AI Product Manager & 0→1 Builder";
 const DESCRIPTION =
-  "I take ideas 0→1 and ship real AI products, fast — by directing AI, not just writing specs. Product Manager at Infinity Learn. 10K+ users, profitable in five weeks, multiple live products across domains. Open to Senior / AI-PM roles (UK + India).";
+  "I take ideas 0→1 and ship real AI products, fast: by directing AI, not just writing specs. Associate Product Manager at Infinity Learn. 10K+ users, profitable in five weeks, multiple live products across domains. Open to Senior / AI-PM roles (UK + India).";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -57,7 +57,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#achal`,
       name: "Achal Tiwari",
       url: SITE_URL,
-      jobTitle: "Product Manager",
+      jobTitle: "Associate Product Manager",
       worksFor: { "@type": "Organization", name: "Infinity Learn" },
       alumniOf: [
         "BITS Pilani",

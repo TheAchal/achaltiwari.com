@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-// Private area — never index, never follow.
+// Private area: never index, never follow.
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };

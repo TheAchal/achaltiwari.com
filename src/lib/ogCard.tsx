@@ -1,6 +1,6 @@
 // Shared visual for the Open Graph / Twitter share card.
 // Returns a satori-compatible element (every node uses display:flex).
-// NOTE: satori's default font lacks arrow glyphs — use "0 to 1", not "0→1".
+// NOTE: satori's default font lacks arrow glyphs: use "0 to 1", not "0→1".
 
 export function OgCard() {
   return (

@@ -7,7 +7,7 @@ import Divider from "@/components/Divider";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Achal Tiwari, Product Manager at Infinity Learn, building AI products across domains. Bio, skills, and background.",
+    "Achal Tiwari, Associate Product Manager at Infinity Learn, building AI products across domains. Bio, skills, and background.",
 };
 
 export default function AboutPage() {
@@ -28,7 +28,7 @@ export default function AboutPage() {
             Achal Tiwari
           </h1>
           <p className="mt-1 text-[var(--color-achal)] font-medium">
-            Product Manager, Infinity Learn
+            Associate Product Manager, Infinity Learn
           </p>
           <p className="mt-3 inline-flex items-center gap-2 text-sm text-[var(--color-claude)] bg-[var(--color-claude-light)] border border-[var(--color-claude)]/20 rounded-full px-3 py-1">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-success)]" />
@@ -54,7 +54,7 @@ export default function AboutPage() {
             Team Black, Infinity Learn
           </h2>
           <p className="text-sm text-[var(--color-muted)] mb-4">
-            Innovation wing &middot; Product Manager
+            Innovation wing &middot; Associate Product Manager
           </p>
           <div className="space-y-3 text-[var(--color-ink)] leading-relaxed">
             <p>

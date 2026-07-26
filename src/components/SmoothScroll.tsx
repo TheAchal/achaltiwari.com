@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 // Inertial smooth scrolling (the "feel" of the reference site, which uses Lenis).
-// Lenis drives native scroll position — so position: sticky / fixed keep working.
+// Lenis drives native scroll position, so position: sticky / fixed keep working.
 export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;

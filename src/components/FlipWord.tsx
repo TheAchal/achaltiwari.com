@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 /* Four words, because a box has four sides. "Products" is the real heading
-   text — it ships in the HTML on its own and the other three are added after
+   text. It ships in the HTML on its own and the other three are added after
    mount, so anything that reads the page without running JS still sees a
    clean "I Ship Real AI Products". Keep the list at four or the cube stops
    lining up, and keep "Products" the longest or the line will reflow. */
 const WORDS = ["Products", "Agents", "Tools", "Systems"];
 
 const DWELL = 2400; // how long a word rests before the box turns
-const TURN = 780; // length of the turn itself — keep in sync with globals.css
+const TURN = 780; // length of the turn itself, keep in sync with globals.css
 
 export default function FlipWord() {
   const ref = useRef<HTMLSpanElement>(null);
@@ -31,7 +31,7 @@ export default function FlipWord() {
     let onScreen = true;
 
     const tick = () => {
-      // Step climbs forever so the box always turns the same way — resetting
+      // Step climbs forever so the box always turns the same way, resetting
       // to 0 would spin it backwards through three sides to get home.
       if (onScreen && !document.hidden) {
         setTurning(true);

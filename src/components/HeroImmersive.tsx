@@ -77,12 +77,12 @@ export default function HeroImmersive() {
   return (
     <div className="hero-pin" ref={pinRef}>
     <section className="hero" ref={heroRef}>
-      {/* Full-bleed photo background — parallax + scroll zoom */}
+      {/* Full-bleed photo background, parallax + scroll zoom */}
       <div className="hero__bg hero__bg--3d" ref={bgRef}>
         <Image src="/images/hero.png" alt="" fill priority sizes="100vw" />
       </div>
 
-      {/* Services + CTA — top-right */}
+      {/* Services + CTA, top-right */}
       <div className="hero__scope">
         <ul>
           <li>AI Product Management</li>
@@ -97,7 +97,7 @@ export default function HeroImmersive() {
         </Link>
       </div>
 
-      {/* Lead block — greeting · name · giant title · scroll (bottom-left) */}
+      {/* Lead block, greeting · name · giant title · scroll (bottom-left) */}
       <div className="hero__lead">
         <p className="eyebrow hero__greeting">Hey, this is</p>
         <p className="hero__name">
@@ -111,9 +111,9 @@ export default function HeroImmersive() {
         <span className="hero__scroll eyebrow">(Scroll down)</span>
       </div>
 
-      {/* Bio — bottom-right */}
+      {/* Bio, bottom-right */}
       <p className="hero__intro">
-        Product Manager at Infinity Learn. I take ideas from zero to shipped and
+        Associate Product Manager at Infinity Learn. I take ideas from zero to shipped and
         build AI products people actually use. Past 10,000 users, profitable in
         five weeks.
       </p>
