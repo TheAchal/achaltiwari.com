@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import fs from "fs";
+import path from "path";
 import HeroImmersive from "@/components/HeroImmersive";
+import { getAllContent } from "@/lib/mdx";
+import { BlogPostMeta, PromptMeta, TimelineEntry } from "@/lib/types";
 
 // Crossing-marquee service words (two bands)
 const svcA = [
@@ -90,7 +94,48 @@ const testimonials = [
   },
 ];
 
+/* Counts come from the content itself so this section can't drift out of date
+   the way a hardcoded "3 posts" would. Our Story's chapters are hand-authored
+   JSX rather than data, so that one number is written down. */
+function readingList() {
+  const timeline: TimelineEntry[] = JSON.parse(
+    fs.readFileSync(path.join(process.cwd(), "content/timeline.json"), "utf8"),
+  );
+  return [
+    {
+      n: "01",
+      title: "Our Story",
+      href: "/our-story",
+      desc: "How this site, and the way I work with AI, actually came together.",
+      meta: "12 chapters",
+    },
+    {
+      n: "02",
+      title: "Journey",
+      href: "/journey",
+      desc: "Everything I've shipped and broken, in the order it happened.",
+      meta: `${timeline.length} milestones`,
+    },
+    {
+      n: "03",
+      title: "Reflections",
+      href: "/blog",
+      desc: "Honest write-ups on building with AI, including what went wrong.",
+      meta: `${getAllContent<BlogPostMeta>("blog").length} posts`,
+    },
+    {
+      n: "04",
+      title: "Prompt Lab",
+      href: "/prompts",
+      desc: "The prompts I actually reuse to think through product problems.",
+      meta: `${getAllContent<PromptMeta>("prompts").length} prompts`,
+    },
+  ];
+}
+
 export default function Home() {
+  const reading = readingList();
+
   return (
     <div className="-mt-6">
       <HeroImmersive />
@@ -183,6 +228,29 @@ export default function Home() {
             </Link>
           );
         })}
+      </section>
+
+      {/* More to read — these four pages used to be reachable only from the
+          footer, so nothing on the way down the page pointed at them. */}
+      <section id="more" className="more scroll-mt-24">
+        <div className="work__head">
+          <h2 className="eyebrow">More to read</h2>
+          <span className="eyebrow opacity-60">Beyond the work</span>
+        </div>
+
+        {reading.map((r) => (
+          <Link key={r.n} href={r.href} className="more__item group">
+            <span className="more__num">{r.n}</span>
+            <span className="more__text">
+              <span className="more__name">{r.title}</span>
+              <span className="more__desc">{r.desc}</span>
+            </span>
+            <span className="more__meta">{r.meta}</span>
+            <span className="more__arrow" aria-hidden>
+              ↗
+            </span>
+          </Link>
+        ))}
       </section>
 
       {/* Testimonials — hidden until real LinkedIn recommendations are added */}

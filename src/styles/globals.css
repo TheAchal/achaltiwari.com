@@ -668,6 +668,100 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===== Testimonials ===== */
+/* ===== More to read — numbered rows, same language as .work ===== */
+.more {
+  padding-block: 2rem 6rem;
+}
+.more__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: baseline;
+  gap: 1.5rem 2.5rem;
+  padding-block: 2rem;
+  border-top: 1px solid var(--color-beige-dark);
+}
+/* The section head already draws a rule, so the first row would double it. */
+.more__item:first-of-type {
+  border-top: none;
+}
+.more__item:last-child {
+  border-bottom: 1px solid var(--color-beige-dark);
+}
+.more__num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  letter-spacing: 0.12em;
+}
+.more__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+/* Uppercase + 800 to sit in the same family as .work__name, a size down
+   because this is the secondary reading list, not the work itself. */
+.more__name {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--color-ink);
+  font-size: clamp(1.6rem, 3.4vw, 2.9rem);
+  transition: color 0.35s ease;
+}
+.group:hover .more__name {
+  color: var(--color-achal);
+}
+.more__desc {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 60ch;
+}
+.more__meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+.more__arrow {
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+.group:hover .more__arrow {
+  color: var(--color-achal);
+  transform: translate(3px, -3px);
+}
+/* Narrow screens: number in its own column, everything else stacked beneath
+   the title. The four-column row can't hold a description and a count side by
+   side at this width — it pushes the text past the edge. The arrow goes since
+   the whole row is the link and it was decorative anyway. */
+@media (max-width: 700px) {
+  .more__item {
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    padding-block: 1.6rem;
+  }
+  .more__text,
+  .more__meta {
+    grid-column: 2;
+  }
+  .more__meta {
+    grid-row: 2;
+  }
+  .more__desc {
+    max-width: none;
+  }
+  .more__arrow {
+    display: none;
+  }
+}
+
 .testi {
   padding-block: 2rem 6rem;
 }
