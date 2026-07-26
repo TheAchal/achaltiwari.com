@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import HeroImmersive from "@/components/HeroImmersive";
 import { getAllContent } from "@/lib/mdx";
-import { BlogPostMeta, PromptMeta, TimelineEntry } from "@/lib/types";
+import { BlogPostMeta, NoteMeta, PromptMeta, TimelineEntry } from "@/lib/types";
 
 // Crossing-marquee service words (two bands)
 const svcA = [
@@ -129,6 +129,13 @@ function readingList() {
       href: "/prompts",
       desc: "The prompts I actually reuse to think through product problems.",
       meta: `${getAllContent<PromptMeta>("prompts").length} prompts`,
+    },
+    {
+      n: "05",
+      title: "Notes",
+      href: "/notes",
+      desc: "A short note each day on what moved in Indian AI and edtech.",
+      meta: `${getAllContent<NoteMeta>("notes").length} notes`,
     },
   ];
 }

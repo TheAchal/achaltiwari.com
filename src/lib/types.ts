@@ -12,6 +12,11 @@ export interface CaseStudyMeta extends ContentMeta {
 
 export interface BlogPostMeta extends ContentMeta {}
 
+/* Short daily notes, written by a scheduled agent. Same shape as a blog post,
+   kept as its own type and folder so the long-form Reflections don't get
+   buried under the daily cadence. */
+export interface NoteMeta extends ContentMeta {}
+
 export interface PromptMeta extends ContentMeta {
   category: string;
 }
