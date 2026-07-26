@@ -14,8 +14,8 @@ export default function NotesPage() {
 
   return (
     <div>
-      <p className="text-sm text-[var(--color-claude)] font-medium mb-4 tracking-wide uppercase">
-        Written by Claude, daily
+      <p className="text-sm text-[var(--color-achal)] font-medium mb-4 tracking-wide uppercase">
+        Daily, by Achal with Claude
       </p>
       <h1
         className="text-3xl sm:text-4xl font-bold"
